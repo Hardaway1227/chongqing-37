@@ -1,5 +1,7 @@
 # 山城重庆 · 37 区县数字志
 
+🔗 **在线预览：[hardaway1227.github.io/chongqing-37](https://hardaway1227.github.io/chongqing-37/)**
+
 > 一个纯静态的重庆旅游数字志：真实地形、程序化三维地标、一条江的叙事主线，以及可用的行程规划与站内向导。
 
 ![首页](assets/pic/yuzhong/hero.jpg)
