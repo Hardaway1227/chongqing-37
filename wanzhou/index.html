@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>畅游万州 · 三峡明珠·平湖之城</title>
+  <link href="fa/font-awesome.min.css" rel="stylesheet">
+  <link href="fonts/fonts.css" rel="stylesheet">
+  <style>
+    .glass { background: rgba(255,255,255,0.55); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.65); box-shadow: 0 8px 32px rgba(10,77,139,0.06); }
+    .card-hover { transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1); position: relative; overflow: hidden; }
+    .card-hover::after { content: ''; position: absolute; inset: 0; border-radius: inherit; border: 2px solid transparent; background: linear-gradient(135deg, rgba(212,168,83,0.5), rgba(10,77,139,0.4)) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.45s ease; pointer-events: none; z-index: 2; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 35px 55px -18px rgba(10,77,139,0.25); }
+    .card-hover:hover::after { opacity: 1; }
+    .btn-hover { transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -8px rgba(10,77,139,0.35); }
+    .btn-hover:active { transform: scale(0.96); }
+    .nav-shadow { box-shadow: 0 12px 40px rgba(0,0,0,0.05); }
+    .text-gradient { background: linear-gradient(135deg, #0A4D8B 0%, #2E7D71 60%, #D4A853 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .decor-line { height: 3px; background: linear-gradient(90deg, #0A4D8B, #D4A853 40%, #2E7D71 70%, #D4A853); width: 90px; margin: 0 auto; border-radius: 2px; position: relative; }
+    .decor-line::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: #D4A853; border-radius: 50%; box-shadow: 0 0 8px rgba(212,168,83,0.5); }
+    .hero-overlay { background: linear-gradient(135deg, rgba(10,30,50,0.75) 0%, rgba(10,77,139,0.45) 50%, rgba(46,125,113,0.25) 100%); }
+    .font-display { font-family: 'Ma Shan Zheng', cursive; }
+    .font-serif { font-family: 'Noto Serif SC', serif; }
+    .deco-svg { position: absolute; pointer-events: none; z-index: 1; opacity: 0.3; }
+    .filter-active { background: linear-gradient(135deg, #0A4D8B, #1a6ab5) !important; color: white !important; border-color: #0A4D8B !important; box-shadow: 0 8px 25px rgba(10,77,139,0.35); }
+    .filter-btn { transition: all 0.3s ease; }
+    .filter-btn:hover { border-color: #0A4D8B; box-shadow: 0 5px 18px rgba(10,77,139,0.15); }
+    .history-card-line { position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #0A4D8B, #D4A853); transform: scaleX(0); transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); transform-origin: left; }
+    .card-hover:hover .history-card-line { transform: scaleX(1); }
+    #home::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 140px; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg width='300' height='80' viewBox='0 0 300 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='100' cy='60' rx='100' ry='30' fill='rgba(255,255,255,0.05)'/%3E%3Cellipse cx='220' cy='50' rx='80' ry='25' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E"); background-repeat: repeat-x; background-position: bottom; z-index: 2; animation: cloudFloat 14s ease-in-out infinite alternate; }
+    @keyframes cloudFloat { 0% { background-position: 0 bottom; } 100% { background-position: 80px bottom; } }
+    .metric-glow { transition: all 0.4s ease; }
+    .metric-glow:hover { box-shadow: 0 8px 25px rgba(10,77,139,0.12); transform: translateY(-2px); }
+    input:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(10,77,139,0.15), 0 8px 25px rgba(10,77,139,0.08); }
+    .footer-seal { font-family: 'Ma Shan Zheng', cursive; writing-mode: vertical-rl; text-orientation: upright; letter-spacing: 6px; opacity: 0.12; color: #D4A853; }
+    .badge-breath { animation: badgePulse 3s ease-in-out infinite; }
+    @keyframes badgePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); } 50% { box-shadow: 0 0 0 8px rgba(239,68,68,0); } }
+  </style>
+<link rel="stylesheet" href="tw.css">
+</head>
+<body class="font-serif text-gray-800 scroll-smooth antialiased">
+
+<header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="text-2xl font-display font-bold text-white md:text-river transition-colors duration-300" id="logoText">
+        <i class="fa fa-map-marker mr-2"></i>畅游万州
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      <a href="#home" class="nav-link text-white md:text-gray-700 px-3 py-2 rounded-lg btn-hover transition-colors">首页</a>
+      <a href="#about" class="nav-link text-white md:text-gray-700 px-3 py-2 rounded-lg btn-hover transition-colors">万州概况</a>
+      <div class="relative group">
+        <a href="#history" class="nav-link text-white md:text-gray-700 px-3 py-2 rounded-lg btn-hover transition-colors flex items-center gap-1">历史人文 <i class="fa fa-caret-down text-xs"></i></a>
+        <div class="absolute top-full left-0 pt-2 w-44 opacity-0 invisible transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 ease-out z-50">
+          <div class="glass rounded-xl shadow-lg py-2">
+            <a href="pages/history-ancient.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-white hover:text-river">千年古城</a>
+            <a href="pages/history-threegorges.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-white hover:text-river">三峡工程</a>
+          </div>
+        </div>
+      </div>
+      <div class="relative group">
+        <a href="#scenic" class="nav-link text-white md:text-gray-700 px-3 py-2 rounded-lg btn-hover transition-colors flex items-center gap-1">热门景点 <i class="fa fa-caret-down text-xs"></i></a>
+        <div class="absolute top-full left-0 pt-2 w-48 opacity-0 invisible transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 ease-out z-50">
+          <div class="glass rounded-xl shadow-lg py-2">
+            <a href="#scenic" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-white hover:text-river">全部景点</a>
+            <a href="pages/scenic-waterfall.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-white hover:text-river">万州大瀑布</a>
+            <a href="pages/scenic-tiansheng.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-white hover:text-river">天生城遗址</a>
+          </div>
+        </div>
+      </div>
+      <a href="#food" class="nav-link text-white md:text-gray-700 px-3 py-2 rounded-lg btn-hover transition-colors">特色美食</a>
+      <a href="#traffic" class="nav-link text-white md:text-gray-700 px-3 py-2 rounded-lg btn-hover transition-colors">交通指南</a>
+      <a href="#contact" class="bg-golden text-white px-5 py-2 rounded-lg btn-hover">联系我们</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden text-white text-2xl"><i class="fa fa-bars"></i></button>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden glass absolute w-full">
+    <div class="container mx-auto px-4 py-3 flex flex-col gap-2">
+      <a href="#home" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-white">首页</a>
+      <a href="#about" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-white">万州概况</a>
+      <a href="#history" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-white">历史人文</a>
+      <a href="#scenic" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-white">热门景点</a>
+      <a href="#food" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-white">特色美食</a>
+      <a href="#traffic" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-white">交通指南</a>
+      <a href="#contact" class="mobile-nav-link bg-golden text-white px-3 py-2 rounded-lg text-center">联系我们</a>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="relative h-screen overflow-hidden">
+  <div id="carousel" class="w-full h-full relative">
+    <div class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="../assets/pic/pubu1.png" alt="瀑布" class="w-full h-full object-cover">
+      <div class="absolute inset-0 hero-overlay flex flex-col justify-center px-6 md:px-20 text-white">
+        <h1 class="text-5xl md:text-8xl font-display font-bold mb-4 drop-shadow-2xl">三峡明珠 · 平湖万州</h1>
+        <p class="text-xl md:text-3xl mb-10 max-w-2xl opacity-90">亚洲第一瀑，奔流千年</p>
+        <a href="pages/scenic-waterfall.html" class="glass text-white px-10 py-4 rounded-full text-lg font-semibold btn-hover w-fit inline-block">探秘大瀑布</a>
+      </div>
+    </div>
+    <div class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="../assets/pic/tiansheng1.jpg" alt="天生城" class="w-full h-full object-cover">
+      <div class="absolute inset-0 hero-overlay flex flex-col justify-center px-6 md:px-20 text-white">
+        <h1 class="text-5xl md:text-8xl font-display font-bold mb-4 drop-shadow-2xl">千年古遗址 · 天生城</h1>
+        <p class="text-xl md:text-3xl mb-10 opacity-90">登三国古城，瞰高峡平湖</p>
+        <a href="pages/scenic-tiansheng.html" class="bg-golden/90 text-white px-10 py-4 rounded-full text-lg font-semibold btn-hover w-fit inline-block">游览天生城</a>
+      </div>
+    </div>
+    <div class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-1000">
+      <img src="../assets/pic/yejing.png" alt="夜景" class="w-full h-full object-cover">
+      <div class="absolute inset-0 hero-overlay flex flex-col justify-center px-6 md:px-20 text-white">
+        <h1 class="text-5xl md:text-8xl font-display font-bold mb-4 drop-shadow-2xl">平湖夜景 · 璀璨万州</h1>
+        <p class="text-xl md:text-3xl mb-10 opacity-90">城在湖中，湖在城里</p>
+        <a href="pages/scenic-pinghu.html" class="glass text-white px-10 py-4 rounded-full text-lg font-semibold btn-hover w-fit inline-block">夜游平湖</a>
+      </div>
+    </div>
+    <button id="prevBtn" class="absolute left-6 top-1/2 -translate-y-1/2 glass text-white w-12 h-12 rounded-full flex items-center justify-center btn-hover z-10"><i class="fa fa-chevron-left text-xl"></i></button>
+    <button id="nextBtn" class="absolute right-6 top-1/2 -translate-y-1/2 glass text-white w-12 h-12 rounded-full flex items-center justify-center btn-hover z-10"><i class="fa fa-chevron-right text-xl"></i></button>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+      <span class="carousel-dot w-3 h-3 rounded-full bg-white/60 cursor-pointer btn-hover" data-index="0"></span>
+      <span class="carousel-dot w-3 h-3 rounded-full bg-white/60 cursor-pointer btn-hover" data-index="1"></span>
+      <span class="carousel-dot w-3 h-3 rounded-full bg-white/60 cursor-pointer btn-hover" data-index="2"></span>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-20 bg-white relative overflow-hidden">
+  <svg class="deco-svg" style="left: 2%; top: 30%; width: 70px; height: 90px;" viewBox="0 0 70 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 90 L10 50 L35 30 L60 50 L60 90" stroke="#0A4D8B" stroke-width="1.5" fill="none"/>
+    <path d="M25 55 L25 90" stroke="#0A4D8B" stroke-width="1.5" fill="none"/>
+    <path d="M45 55 L45 90" stroke="#0A4D8B" stroke-width="1.5" fill="none"/>
+    <circle cx="35" cy="45" r="3" fill="#0A4D8B" opacity="0.5"/>
+  </svg>
+  <svg class="deco-svg" style="right: 2%; top: 20%; width: 150px; height: 80px;" viewBox="0 0 150 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="50" rx="50" ry="20" stroke="#0A4D8B" stroke-width="1" fill="none" opacity="0.3"/>
+    <ellipse cx="110" cy="40" rx="40" ry="15" stroke="#2E7D71" stroke-width="1" fill="none" opacity="0.3"/>
+  </svg>
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 text-ink">万州概况</h2>
+      <div class="decor-line"></div>
+      <p class="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">地处三峡库区腹心，长江上游重要枢纽，重庆第二大城市，被誉为“中国烤鱼之乡”“国家森林城市”。万州因“万川毕汇”而得名，自古便是巴蜀文化与荆楚文明的交融之地，如今更是一座山水相依、古今辉映的现代都市。</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-2xl transform hover:rotate-0 transition-transform duration-700 border-8 border-white">
+        <img src="../assets/pic/quan.jpg" alt="全景" class="w-full h-auto">
+      </div>
+      <div class="space-y-6">
+        <h3 class="text-3xl font-display font-bold text-gradient">三峡明珠 · 平湖之城</h3>
+        <p class="text-gray-700 leading-relaxed">万州地处长江上游、重庆东北部，是三峡库区最大的移民城市。高峡出平湖的壮丽景观与现代化城市风貌交织，长江穿城而过，南北滨江路蜿蜒数十公里，形成了“城在湖中、湖在山中”的独特画卷。万州拥有1800余年建城史，是国家优秀旅游城市、全国双拥模范城，也是渝东北、川东、鄂西的区域性中心城市。</p>
+        <p class="text-gray-700 leading-relaxed">这里四季分明，气候宜人，森林覆盖率超过53%，拥有众多国家级景区、森林公园和自然保护区。无论是壮美的自然风光，还是厚重的历史遗迹，亦或是麻辣鲜香的特色美食，都让万州成为三峡旅游线上不可错过的核心目的地。</p>
+        <div class="grid grid-cols-2 gap-4 mt-2">
+          <div class="glass p-4 rounded-xl flex items-center gap-3 metric-glow"><i class="fa fa-area-chart text-2xl text-river"></i><span class="font-bold">3457 km²</span><span class="text-sm text-gray-500 ml-1">辖区面积</span></div>
+          <div class="glass p-4 rounded-xl flex items-center gap-3 metric-glow"><i class="fa fa-users text-2xl text-river"></i><span class="font-bold">156 万</span><span class="text-sm text-gray-500 ml-1">常住人口</span></div>
+          <div class="glass p-4 rounded-xl flex items-center gap-3 metric-glow"><i class="fa fa-clock-o text-2xl text-river"></i><span class="font-bold">1800+ 年</span><span class="text-sm text-gray-500 ml-1">建城历史</span></div>
+          <div class="glass p-4 rounded-xl flex items-center gap-3 metric-glow"><i class="fa fa-trophy text-2xl text-golden"></i><span class="font-bold">国家森林城市</span><span class="text-sm text-gray-500 ml-1">生态名片</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="history" class="py-20 bg-mist relative overflow-hidden">
+  <svg class="deco-svg" style="right: 5%; top: 15%; width: 100px; height: 80px;" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 Q20 10 40 40" stroke="#0A4D8B" stroke-width="1.5" fill="none"/>
+    <path d="M30 30 Q45 5 60 30" stroke="#0A4D8B" stroke-width="1.2" fill="none"/>
+    <path d="M50 50 Q70 20 90 50" stroke="#2E7D71" stroke-width="1.5" fill="none"/>
+  </svg>
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 text-ink">历史人文</h2>
+      <div class="decor-line"></div>
+      <p class="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">千年文脉绵延，从三国烽烟到高峡平湖，万州见证了无数风云变幻，也积淀了深厚的文化底蕴。</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <a href="pages/history-ancient.html" class="glass rounded-3xl p-6 card-hover text-center block relative overflow-hidden group">
+        <div class="history-card-line"></div>
+        <i class="fa fa-flag text-4xl text-river mb-4"></i>
+        <h3 class="text-xl font-bold mb-2">古城肇始</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">东汉建安年间，蜀汉昭烈帝刘备置羊渠县，为万州建置之始。天生城雄踞江畔，扼守三峡水道，自古即为兵家必争之地，见证了无数金戈铁马。</p>
+        <span class="text-golden mt-3 inline-block font-bold">查看详情 →</span>
+      </a>
+      <a href="pages/history-tang.html" class="glass rounded-3xl p-6 card-hover text-center block relative overflow-hidden group">
+        <div class="history-card-line"></div>
+        <i class="fa fa-ship text-4xl text-river mb-4"></i>
+        <h3 class="text-xl font-bold mb-2">唐宋繁华</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">唐代正式设立万州，取“万川毕汇”之意。宋代商贾云集，盐运、茶马贸易兴盛，万州成为长江上游重要商埠，享有“万商之城”的美誉，西山碑等文物留存至今。</p>
+        <span class="text-golden mt-3 inline-block font-bold">查看详情 →</span>
+      </a>
+      <a href="pages/history-threegorges.html" class="glass rounded-3xl p-6 card-hover text-center block relative overflow-hidden group">
+        <div class="history-card-line"></div>
+        <i class="fa fa-building text-4xl text-river mb-4"></i>
+        <h3 class="text-xl font-bold mb-2">三峡工程</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">1994年三峡工程动工，万州成为库区腹心最大的移民城市。半座老城沉入江底，26万移民搬迁，一座崭新的现代化新城在平湖之畔崛起，谱写了感人的移民新篇。</p>
+        <span class="text-golden mt-3 inline-block font-bold">查看详情 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="scenic" class="py-20 bg-white relative overflow-hidden">
+  <svg class="deco-svg" style="left: 50%; bottom: 0; transform: translateX(-50%); width: 40px; height: 100px;" viewBox="0 0 40 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="10" y1="0" x2="10" y2="80" stroke="#0A4D8B" stroke-width="2" stroke-dasharray="6 4" opacity="0.4"/>
+    <line x1="30" y1="10" x2="30" y2="70" stroke="#0A4D8B" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.3"/>
+  </svg>
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 text-ink">热门景点</h2>
+      <div class="decor-line"></div>
+      <p class="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">万州集自然奇观与人文胜迹于一体，从亚洲第一瀑到千年古城遗址，从城市绿肺到原始峡谷，每一处都值得细细品味。</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button class="filter-btn px-6 py-2.5 rounded-full font-bold border-2 border-gray-300 glass text-gray-700 transition-all filter-active" data-filter="all">全部</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-bold border-2 border-gray-300 glass text-gray-700 transition-all" data-filter="nature">自然景观</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-bold border-2 border-gray-300 glass text-gray-700 transition-all" data-filter="history">历史古迹</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-bold border-2 border-gray-300 glass text-gray-700 transition-all" data-filter="park">城市公园</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-bold border-2 border-gray-300 glass text-gray-700 transition-all" data-filter="forest">森林公园</button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="scenicGrid">
+      <div class="glass rounded-3xl overflow-hidden card-hover" data-category="nature">
+        <img src="../assets/pic/pubu2.png" alt="瀑布" class="w-full h-52 object-cover">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">万州大瀑布</h3><p class="text-gray-600 text-sm mb-3">宽115米，高64.5米，亚洲第一宽瀑，水雾彩虹飞架。</p><div class="flex justify-between items-center"><span class="text-river font-bold text-sm">4A景区</span><a href="pages/scenic-waterfall.html" class="text-golden font-bold btn-hover text-sm">详情 →</a></div></div>
+      </div>
+      <div class="glass rounded-3xl overflow-hidden card-hover" data-category="history">
+        <img src="../assets/pic/tiansheng2.jpg" alt="天生城" class="w-full h-52 object-cover">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">天生城遗址</h3><p class="text-gray-600 text-sm mb-3">三国古战场，宋代抗元山城，国家级文保单位。</p><div class="flex justify-between items-center"><span class="text-river font-bold text-sm">历史古迹</span><a href="pages/scenic-tiansheng.html" class="text-golden font-bold btn-hover text-sm">详情 →</a></div></div>
+      </div>
+      <div class="glass rounded-3xl overflow-hidden card-hover" data-category="park">
+        <img src="../assets/pic/xi1.png" alt="西山公园" class="w-full h-52 object-cover">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">西山公园</h3><p class="text-gray-600 text-sm mb-3">百年历史城市公园，古木参天，钟楼远眺长江。</p><div class="flex justify-between items-center"><span class="text-river font-bold text-sm">城市公园</span><a href="pages/scenic-xishan.html" class="text-golden font-bold btn-hover text-sm">详情 →</a></div></div>
+      </div>
+      <div class="glass rounded-3xl overflow-hidden card-hover" data-category="nature">
+        <img src="../assets/pic/pinghu1.png" alt="平湖" class="w-full h-52 object-cover">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">三峡平湖旅游区</h3><p class="text-gray-600 text-sm mb-3">高峡出平湖核心景观，乘船夜游，璀璨夜景如画。</p><div class="flex justify-between items-center"><span class="text-river font-bold text-sm">自然景观</span><a href="pages/scenic-pinghu.html" class="text-golden font-bold btn-hover text-sm">详情 →</a></div></div>
+      </div>
+      <div class="glass rounded-3xl overflow-hidden card-hover" data-category="nature">
+        <img src="../assets/pic/tan1.jpg" alt="潭獐峡" class="w-full h-52 object-cover">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">潭獐峡</h3><p class="text-gray-600 text-sm mb-3">国家级风景名胜区，峡谷幽深，溪流清澈，原生态秘境。</p><div class="flex justify-between items-center"><span class="text-river font-bold text-sm">自然保护区</span><a href="pages/scenic-tanzhuxia.html" class="text-golden font-bold btn-hover text-sm">详情 →</a></div></div>
+      </div>
+      <div class="glass rounded-3xl overflow-hidden card-hover" data-category="forest">
+        <img src="../assets/pic/tie1.png" alt="铁峰山" class="w-full h-52 object-cover">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">铁峰山国家森林公园</h3><p class="text-gray-600 text-sm mb-3">森林覆盖率95%，夏季均温22℃，露营避暑天堂。</p><div class="flex justify-between items-center"><span class="text-river font-bold text-sm">森林公园</span><a href="pages/scenic-tiefeng.html" class="text-golden font-bold btn-hover text-sm">详情 →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="food" class="py-20 bg-gradient-to-b from-orange-50 to-white relative overflow-hidden">
+  <svg class="deco-svg" style="left: 0; top: 10%; width: 100%; height: 40px;" viewBox="0 0 200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 15 Q25 5 50 15 T100 15 T150 15 L200 15" stroke="#0A4D8B" stroke-width="1.5" opacity="0.3"/>
+    <path d="M0 20 Q30 10 60 20 T120 20 T180 20 L200 20" stroke="#2E7D71" stroke-width="1.5" opacity="0.2"/>
+  </svg>
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 text-ink">特色美食</h2>
+      <div class="decor-line"></div>
+      <p class="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">万州是中国烤鱼之乡，美食文化源远流长。麻辣鲜香的烤鱼、酱香浓郁的杂酱面、竹笼蒸制的格格，共同构成了独具魅力的三峡风味。</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <a href="pages/food-kaoyu.html" class="glass rounded-3xl overflow-hidden card-hover group block relative">
+        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-10 badge-breath">非遗</div>
+        <img src="../assets/pic/kao1.jpg" alt="烤鱼" class="w-full h-52 object-cover group-hover:scale-105 transition-transform">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">万州烤鱼</h3><p class="text-gray-600 text-sm mb-2">国家级非遗，先烤后炖，外焦里嫩，麻辣鲜香，是三峡美食的灵魂代表。</p><span class="text-golden mt-2 inline-block font-bold text-sm">心连心广场烤鱼街 →</span></div>
+      </a>
+      <a href="pages/food-noodles.html" class="glass rounded-3xl overflow-hidden card-hover group block">
+        <img src="../assets/pic/zha1.jpg" alt="杂酱面" class="w-full h-52 object-cover group-hover:scale-105 transition-transform">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">万州杂酱面</h3><p class="text-gray-600 text-sm mb-2">杂酱浓郁，面条劲道，配以葱花花生碎，是万州人早餐的灵魂，被誉为重庆小面的天花板。</p><span class="text-golden mt-2 inline-block font-bold text-sm">万达广场周边老店 →</span></div>
+      </a>
+      <a href="pages/food-gege.html" class="glass rounded-3xl overflow-hidden card-hover group block">
+        <img src="../assets/pic/gege1.jpg" alt="格格" class="w-full h-52 object-cover group-hover:scale-105 transition-transform">
+        <div class="p-5"><h3 class="text-xl font-bold mb-1">万州格格</h3><p class="text-gray-600 text-sm mb-2">竹笼粉蒸系列小吃，羊肉、肥肠、排骨各有风味，软糯麻辣，是万州市井美食的代表。</p><span class="text-golden mt-2 inline-block font-bold text-sm">鸽子沟格格老店 →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="traffic" class="py-20 bg-gradient-to-r from-river/5 to-golden/5 relative overflow-hidden">
+  <svg class="deco-svg" style="right: 3%; bottom: 10%; width: 60px; height: 120px;" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="30" y1="0" x2="30" y2="100" stroke="#2E7D71" stroke-width="2" opacity="0.4"/>
+    <path d="M30 20 L10 10 M30 20 L50 15" stroke="#2E7D71" stroke-width="1.5" opacity="0.4"/>
+    <path d="M30 50 L10 40 M30 50 L50 45" stroke="#2E7D71" stroke-width="1.5" opacity="0.4"/>
+  </svg>
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 text-ink">交通指南</h2>
+    <div class="decor-line mb-12"></div>
+    <p class="text-gray-600 mb-10 max-w-2xl mx-auto">万州交通便捷，高铁、航空、水运、高速路网四通八达，是三峡旅游的核心集散地。</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <a href="https://www.12306.cn" target="_blank" class="glass p-6 rounded-3xl card-hover block"><i class="fa fa-train text-4xl text-river mb-3"></i><h3 class="text-lg font-bold">高铁</h3><p class="text-sm mt-1 text-gray-500">万州北站 · 直达全国</p></a>
+      <a href="https://www.ctrip.com/flight/" target="_blank" class="glass p-6 rounded-3xl card-hover block"><i class="fa fa-plane text-4xl text-golden mb-3"></i><h3 class="text-lg font-bold">航空</h3><p class="text-sm mt-1 text-gray-500">五桥机场 · 通航20+城市</p></a>
+      <a href="https://www.sxdsx.com" target="_blank" class="glass p-6 rounded-3xl card-hover block"><i class="fa fa-ship text-4xl text-river mb-3"></i><h3 class="text-lg font-bold">水运</h3><p class="text-sm mt-1 text-gray-500">长江黄金水道 · 三峡游轮</p></a>
+      <a href="https://www.amap.com" target="_blank" class="glass p-6 rounded-3xl card-hover block"><i class="fa fa-bus text-4xl text-jade mb-3"></i><h3 class="text-lg font-bold">公路</h3><p class="text-sm mt-1 text-gray-500">高速路网密集 · 自驾便捷</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-20 bg-white relative overflow-hidden">
+  <svg class="deco-svg" style="left: 5%; bottom: 10%; width: 100px; height: 60px;" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 30 Q50 15 85 30" stroke="#0A4D8B" stroke-width="2" fill="none" opacity="0.4"/>
+    <line x1="50" y1="15" x2="50" y2="10" stroke="#0A4D8B" stroke-width="1.5" opacity="0.4"/>
+    <path d="M45 28 Q50 20 55 28" stroke="#0A4D8B" stroke-width="1" fill="none" opacity="0.5"/>
+  </svg>
+  <div class="container mx-auto px-6 max-w-2xl text-center">
+    <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 text-ink">联系我们</h2>
+    <div class="decor-line mb-10"></div>
+    <p class="text-gray-600 mb-8">如需旅游咨询、团体预约或商业合作，请填写下方表单，我们将尽快与您联系。</p>
+    <form class="glass p-8 rounded-3xl shadow-2xl text-left space-y-5">
+      <div><label class="block mb-1 font-bold text-gray-700">姓名</label><input type="text" required class="w-full px-4 py-3 border rounded-xl bg-white/60 focus:ring-2 focus:ring-river outline-none transition-shadow"></div>
+      <div><label class="block mb-1 font-bold text-gray-700">电话</label><input type="tel" required class="w-full px-4 py-3 border rounded-xl bg-white/60 focus:ring-2 focus:ring-river outline-none transition-shadow"></div>
+      <div><label class="block mb-1 font-bold text-gray-700">留言</label><textarea rows="4" required class="w-full px-4 py-3 border rounded-xl bg-white/60 focus:ring-2 focus:ring-river outline-none transition-shadow"></textarea></div>
+      <button type="submit" class="w-full bg-river text-white py-3 rounded-xl font-bold text-lg btn-hover">提交留言</button>
+    </form>
+    <div class="mt-10 text-center">
+      <p class="text-gray-600 mb-6 text-lg font-bold">关注万州官方平台</p>
+      <div class="flex justify-center gap-8">
+        <a href="https://mp.weixin.qq.com/s/xxxx" target="_blank" class="flex flex-col items-center text-gray-500 hover:text-green-500 transition-colors btn-hover"><i class="fa fa-weixin text-4xl mb-2"></i><span class="text-sm font-bold">文旅万州</span></a>
+        <a href="https://www.douyin.com/user/xxxx" target="_blank" class="flex flex-col items-center text-gray-500 hover:text-blue-500 transition-colors btn-hover"><i class="fa fa-instagram text-4xl mb-2"></i><span class="text-sm font-bold">平湖万州</span></a>
+        <a href="https://weibo.com/u/2972474694" target="_blank" class="flex flex-col items-center text-gray-500 hover:text-red-500 transition-colors btn-hover"><i class="fa fa-weibo text-4xl mb-2"></i><span class="text-sm font-bold">万州发布</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-white py-10 relative">
+  <div class="footer-seal absolute top-2 right-8 text-5xl select-none">万 州</div>
+  <div class="container mx-auto px-6 text-center">
+    <h3 class="text-3xl font-display font-bold mb-3">三峡明珠 · 平湖万州</h3>
+    <p class="text-gray-400 mb-5 text-sm">欢迎来到万州，体验山水之美、品尝特色美食</p>
+    <div class="flex justify-center gap-6 mb-6">
+      <a href="#" class="text-gray-400 hover:text-green-400 text-xl btn-hover"><i class="fa fa-weixin"></i></a>
+      <a href="#" class="text-gray-400 hover:text-blue-400 text-xl btn-hover"><i class="fa fa-instagram"></i></a>
+      <a href="#" class="text-gray-400 hover:text-red-400 text-xl btn-hover"><i class="fa fa-weibo"></i></a>
+    </div>
+    <p class="text-gray-500 text-sm">© 2025 万州旅游宣传网 版权所有</p>
+  </div>
+</footer>
+
+<button id="backToTop" class="fixed right-8 bottom-8 w-12 h-12 bg-river text-white rounded-full shadow-2xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:scale-110 z-50"><i class="fa fa-chevron-up text-xl"></i></button>
+
+<script>
+  (function() {
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backBtn = document.getElementById('backToTop');
+    let items = document.querySelectorAll('.carousel-item');
+    let dots = document.querySelectorAll('.carousel-dot');
+    let current = 0, timer;
+
+    function updateNav() {
+      let scroll = window.scrollY;
+      if (scroll > 50) {
+        navbar.classList.add('glass','nav-shadow');
+        document.querySelectorAll('.nav-link').forEach(l => { l.classList.remove('text-white'); l.classList.add('text-gray-700'); });
+        document.getElementById('logoText').classList.replace('text-white','text-river');
+      } else {
+        navbar.classList.remove('glass','nav-shadow');
+        document.querySelectorAll('.nav-link').forEach(l => { l.classList.add('text-white'); l.classList.remove('text-gray-700'); });
+        document.getElementById('logoText').classList.replace('text-river','text-white');
+      }
+      backBtn.classList.toggle('opacity-0', scroll < 500);
+    }
+    window.addEventListener('scroll', updateNav, {passive:true});
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    function changeSlide(i) {
+      items[current].style.opacity = '0'; dots[current].classList.remove('bg-white');
+      items[i].style.opacity = '1'; dots[i].classList.add('bg-white');
+      current = i;
+    }
+    document.getElementById('prevBtn').addEventListener('click', () => { changeSlide((current-1+items.length)%items.length); resetTimer(); });
+    document.getElementById('nextBtn').addEventListener('click', () => { changeSlide((current+1)%items.length); resetTimer(); });
+    dots.forEach((d,i) => d.addEventListener('click', () => { changeSlide(i); resetTimer(); }));
+    function auto() { timer = setInterval(() => changeSlide((current+1)%items.length), 6000); }
+    function resetTimer() { clearInterval(timer); auto(); }
+    if(items.length) { items[0].style.opacity='1'; dots[0].classList.add('bg-white'); auto(); }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('filter-active'));
+        this.classList.add('filter-active');
+        let cat = this.dataset.filter;
+        document.querySelectorAll('#scenicGrid > [data-category]').forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
+        });
+      });
+    });
+
+    backBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+    updateNav();
+  })();
+</script>
+<script defer src="../assets/js/districtfx.js?v=20261019e"></script>
+</body>
+</html>

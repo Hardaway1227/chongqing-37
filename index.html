@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-pfx="out">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山城·重庆 — 立体城市志</title>
+<meta name="description" content="重庆全方位数字志：可交互三维地形图、山城民宿、巴渝人文、地标三维模型与老照片今昔对照。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/style.css?v=20261019k">
+</head>
+<body>
+<div id="bgfx" aria-hidden="true">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="lights"></div>
+  <svg class="ridge r1" viewBox="0 0 1440 190" preserveAspectRatio="none"><path d="M0 190 0 120 80 92 150 116 240 70 330 108 420 84 520 114 610 58 700 102 790 76 900 108 990 66 1090 100 1180 80 1280 110 1370 84 1440 104 1440 190Z"/></svg>
+  <svg class="ridge r2" viewBox="0 0 1440 150" preserveAspectRatio="none"><path d="M0 150 0 96 110 72 220 100 330 60 440 96 560 78 680 104 800 64 920 98 1040 76 1160 104 1280 70 1380 98 1440 82 1440 150Z"/></svg>
+  <svg class="wave w1" viewBox="0 0 2880 120" preserveAspectRatio="none" style="width:300%"><path d="M0 60 Q75 30 150 60 T300 60 T450 60 T600 60 T750 60 T900 60 T1050 60 T1200 60 T1350 60 T1500 60 T1650 60 T1800 60 T1950 60 T2100 60 T2250 60 T2400 60 T2550 60 T2700 60 T2850 60 V110 H0 Z"/></svg>
+  <svg class="wave w2" viewBox="0 0 2880 110" preserveAspectRatio="none" style="width:300%"><path d="M0 60 Q75 30 150 60 T300 60 T450 60 T600 60 T750 60 T900 60 T1050 60 T1200 60 T1350 60 T1500 60 T1650 60 T1800 60 T1950 60 T2100 60 T2250 60 T2400 60 T2550 60 T2700 60 T2850 60 V110 H0 Z"/></svg>
+  <div class="grain"></div>
+</div>
+
+<noscript>
+  <div class="noscript-tip">
+    <div class="ns-mark">重慶</div>
+    <p>本站的三维地形、地标模型与交互模块需要启用 JavaScript 与 WebGL 才能浏览。<br>
+       请在浏览器设置中开启 JavaScript 后刷新此页面。</p>
+  </div>
+</noscript>
+
+<!-- ============ 加载遮罩 ============ -->
+<div id="boot" role="status" aria-live="polite" aria-label="页面加载中">
+  <div class="boot-inner">
+    <div class="boot-mark">重慶</div>
+    <div class="boot-bar"><i></i></div>
+    <div class="boot-tip">正在生成三维地形…</div>
+  </div>
+</div>
+
+<!-- ============ 导航 ============ -->
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="#hero"><span class="lg-cn">重庆</span><span class="lg-en">CHONGQING</span></a>
+  <ul class="nav-list">
+    <li><a href="#hero" class="nl on">序章</a></li>
+    <li><a href="#history" class="nl">历史</a></li>
+    <li><a href="#terrain" class="nl">地形</a></li>
+    <li><a href="#rail" class="nl">铁路</a></li>
+    <li><a href="#cloud" class="nl">词云</a></li>
+    <li><a href="#stay" class="nl">民宿</a></li>
+    <li><a href="#culture" class="nl">人文</a></li>
+    <li><a href="#folk" class="nl">民俗</a></li>
+    <li><a href="#model3d" class="nl">三维</a></li>
+    <li><a href="#guess" class="nl">猜地方</a></li>
+    <li><a href="plan.html" class="nl nl-ext">行程</a></li>
+    <li><a href="data.html" class="nl nl-ext">数据</a></li>
+    <li class="nav-drop"><button class="nl" id="navDist" aria-haspopup="true" aria-expanded="false">区县 ▾</button></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="菜单"><i></i><i></i><i></i></button>
+  <div class="nav-menu" id="navMenu"></div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="hero" class="hero">
+  <div class="hero-fog"></div>
+  <div class="hero-ridge" id="ridge"></div>
+  <div class="hero-body">
+    <div class="eyebrow">北纬 28°10′ — 32°13′ · 东经 105°17′ — 110°11′</div>
+    <h1 class="hero-title"><span>山</span><span>城</span><span>重</span><span>庆</span></h1>
+    <p class="hero-sub">一座建在褶皱山脉上的城市。长江与嘉陵江在这里相撞，<br>房子从江边长到山顶，轻轨从楼里穿过去。</p>
+    <div class="hero-stats" id="heroStats"></div>
+    <p class="hero-src">数据来源：重庆市统计局《重庆统计年鉴》· 重庆市民政局行政区划 · SRTM 30m 高程数据 · 中国气象局气候资料</p>
+    <div class="hero-cta">
+      <a href="#terrain" class="btn btn-primary">看三维地形 →</a>
+      <a href="#guess" class="btn btn-ghost">猜猜这是哪儿</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><i></i></div>
+</header>
+
+<!-- ============ 历史年表 ============ -->
+<section id="history" class="sec sec-hist">
+  <div class="sec-head reveal">
+    <span class="sec-idx">01</span>
+    <h2 class="sec-title">山城千年</h2>
+    <p class="sec-desc">从巴人歌舞的江峡之国，到钓鱼城下折鞭的蒙哥，再到雾中不肯低头的陪都——
+      点下面的时代按钮，或者拖着时间轴走一遍重庆两千三百年。</p>
+  </div>
+
+  <div class="hist-bar">
+    <div class="hist-eras" id="histEras"></div>
+    <button class="hs-play" id="hsPlay" type="button">▶ 自动巡游</button>
+  </div>
+
+  <div class="hist-axis" id="histAxis"></div>
+
+  <div class="hist-stage">
+    <div class="hs-left">
+      <div class="hs-scene" id="hsScene"></div>
+      <p class="hs-relic" id="hsRelic"></p>
+    </div>
+    <div class="hs-right">
+      <div class="hs-head">
+        <span class="hs-en" id="hsEn"></span>
+        <h3 class="hs-name" id="hsName"></h3>
+        <span class="hs-span" id="hsSpan"></span>
+        <p class="hs-lead" id="hsLead"></p>
+        <div class="hs-tags" id="hsTags"></div>
+      </div>
+      <div class="hs-events" id="hsEvents"></div>
+    </div>
+  </div>
+
+  <div class="hist-marks-wrap">
+    <h4 class="hmw-t">全时段里程碑 <span>· 点一下跳到那个时代</span></h4>
+    <div class="hist-marks" id="histMarks"></div>
+  </div>
+</section>
+
+<!-- ============ 地形 ============ -->
+<section id="terrain" class="sec sec-terrain">
+  <div class="sec-head reveal">
+    <span class="sec-idx">02</span>
+    <h2 class="sec-title">立体地形</h2>
+    <p class="sec-desc">基于真实 SRTM 卫星高程数据逐米还原的山体，2048² 高程场 + 1024² 几何网格，
+      平行岭谷、峡谷深切与真身无异，还可切换真实卫星影像。<b>每一道区县轮廓都按真实行政边界描出</b>——
+      把鼠标移到地形上，区县会点亮并填色，点一下就展开它的档案。</p>
+  </div>
+
+  <div class="terra-wrap reveal">
+    <div class="terra-stage" id="terraStage">
+      <canvas id="terraCanvas" role="img" aria-label="重庆三维地形图，可交互：拖动旋转、滚轮缩放、悬停查看区县"></canvas>
+      <div class="terra-hud">
+        <div class="hud-row"><span class="hud-k">模式</span>
+          <div class="hud-modes" id="terraModes">
+            <button class="hm on" data-mode="terrain">地形</button>
+            <button class="hm" data-mode="sat">影像</button>
+            <button class="hm" data-mode="water">水系</button>
+            <button class="hm" data-mode="night">夜景</button>
+          </div>
+        </div>
+        <div class="hud-row"><span class="hud-k">视角</span>
+          <div class="hud-modes">
+            <button class="hv" data-view="south">南</button>
+            <button class="hv" data-view="east">东</button>
+            <button class="hv" data-view="top">俯瞰</button>
+            <button class="hv" data-view="iso">默认</button>
+            <button class="hv on" id="tvNameBtn" title="显示 / 隐藏区县名称">区县名</button>
+            <button class="hv" id="tvContourBtn" title="叠加 250m 等高线">等高线</button>
+            <button class="hv" id="tvProfileBtn" title="在地形上点两点，生成高程剖面">剖面</button>
+          </div>
+        </div>
+        <div class="hud-row hud-legend">
+          <span class="hud-k">海拔</span>
+          <div class="legend-bar"></div>
+          <div class="legend-tick"><span>73m</span><span>1500m</span><span>2797m</span></div>
+        </div>
+        <div class="hud-row hud-map">
+          <div class="north" id="terraNorth" title="指北针随视角旋转"><i></i><b>N</b></div>
+          <div class="scalebar" id="terraScale" title="比例尺随缩放换档"><i></i><span>50 km</span></div>
+        </div>
+      </div>
+      <div class="terra-tip">拖动旋转 · 滚轮缩放 · <b>悬停看区县、点击填色高亮</b> · 蓝线为区县界</div>
+      <div class="terra-legend" id="terraLegend">
+        <span class="tl-i" data-c="主城"><i style="background:#ff6a48"></i>主城</span>
+        <span class="tl-i" data-c="新区"><i style="background:#5aa8ff"></i>新区</span>
+        <span class="tl-i" data-c="渝东北"><i style="background:#ffd35e"></i>渝东北</span>
+        <span class="tl-i" data-c="渝东南"><i style="background:#46e0ad"></i>渝东南</span>
+      </div>
+      <div class="prof-panel" id="profPanel" hidden>
+        <div class="pp-head"><span>高程剖面</span><button id="profClose" title="关闭">×</button></div>
+        <canvas id="profCanvas" width="280" height="96"></canvas>
+        <div class="pp-foot" id="profFoot">在地形上点两点</div>
+      </div>
+      <div class="tv-tip" id="tvTip"></div>
+      <div class="terra-loading" id="terraLoading"><span></span>生成地形网格…</div>
+    </div>
+
+    <aside class="terra-panel" id="terraPanel">
+      <div class="tp-empty" id="tpEmpty">
+        <div class="tp-icon">⛰</div>
+        <p>点选地形上的区县光点<br>这里会显示它的档案</p>
+      </div>
+      <div class="tp-body" id="tpBody" hidden>
+        <div class="tp-top">
+          <h3 id="tpName">—</h3>
+          <span class="tp-tag" id="tpTag">—</span>
+        </div>
+        <div class="tp-grid" id="tpGrid"></div>
+        <p class="tp-desc" id="tpDesc"></p>
+        <div class="tp-marks" id="tpMarks"></div>
+        <a class="tp-enter" id="tpEnter" href="district.html?d=渝中区">进入专区 →</a>
+        <button class="tp-close" id="tpClose">关闭 ✕</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="terra-quick reveal" id="terraQuick"></div>
+</section>
+
+<!-- ============ 铁路 / 高铁线路 ============ -->
+<section id="rail" class="sec sec-rail">
+  <div class="sec-head reveal">
+    <span class="sec-idx">03</span>
+    <h2 class="sec-title">铁路脉络</h2>
+    <p class="sec-desc">从 1952 年的成渝铁路到 350 的高铁网，重庆把铁轨铺进了褶皱山脉的每一道缝。
+      红的是高铁、蓝的是快速铁路、金色虚线是正在建的。列车会沿着线跑——
+      点一条线路或一个车站看详情。</p>
+  </div>
+
+  <div class="rail-wrap reveal">
+    <div class="rail-stage" id="railStage">
+      <div class="rail-tip" id="railTip"></div>
+      <div class="rail-loading"><span></span>正在铺轨…</div>
+    </div>
+
+    <aside class="rail-panel" id="railPanel"></aside>
+  </div>
+
+  <div class="rail-bar reveal">
+    <div class="rail-legend" id="railLegend"></div>
+    <div class="rail-ctrl">
+      <button class="rb" id="railPlay">⏸ 暂停列车</button>
+      <button class="rb" id="railLabels">显示全部站名</button>
+    </div>
+  </div>
+
+  <div class="rail-cards reveal" id="railCards"></div>
+</section>
+
+<!-- ============ 地貌词云 ============ -->
+<section id="cloud" class="sec sec-cloud">
+  <div class="sec-head reveal">
+    <span class="sec-idx">04</span>
+    <h2 class="sec-title">地貌词云</h2>
+    <p class="sec-desc">每个区县一团词云，外框就是它真实的地貌轮廓 —— 城口是尖峰、奉节是峡江、
+      酉阳是峰林、合川是三江汇。悬停看词条，点一下看详情。</p>
+  </div>
+
+  <div class="wc-wrap reveal">
+    <div class="wc-picker">
+      <div class="wc-pick-head">
+        <span>选区县</span>
+        <button class="wc-rand" id="wcRand">换一个</button>
+      </div>
+      <div class="wc-groups" id="wcGroups"></div>
+    </div>
+
+    <div class="wc-main">
+      <div class="wc-stage" id="wcStage">
+        <div class="wc-shape" id="wcShape"></div>
+        <div class="wc-tip" id="wcTip"></div>
+      </div>
+      <div class="wc-meta">
+        <div class="wc-title">
+          <h3 id="wcName">—</h3>
+          <span class="wc-shape-tag" id="wcShapeTag">—</span>
+        </div>
+        <p class="wc-note" id="wcNote">—</p>
+        <a class="wc-enter" id="wcEnter" href="district.html?d=渝中区">进入专区 →</a>
+        <div class="wc-legend" id="wcLegend"></div>
+      </div>
+    </div>
+
+    <aside class="wc-detail" id="wcDetail">
+      <div class="wd-empty" id="wdEmpty">
+        <div class="wd-icon">◈</div>
+        <p>点一个词<br>这里出详情</p>
+      </div>
+      <div class="wd-body" id="wdBody" hidden>
+        <span class="wd-cat" id="wdCat">—</span>
+        <h4 id="wdWord">—</h4>
+        <p id="wdDesc">—</p>
+        <div class="wd-in" id="wdIn">—</div>
+      </div>
+      <div class="wd-stat" id="wdStat"></div>
+    </aside>
+  </div>
+
+  <!-- 区县印记墙 -->
+  <div class="em-wall-wrap reveal">
+    <div class="em-wall-head">
+      <span class="em-wall-idx">SEALS</span>
+      <h3>三十八枚区县印记</h3>
+      <p>一个区县一枚徽章：纹样从它的地貌和招牌里长出来 —— 奉节是夔门和脐橙，巫溪是盐灶和红池坝，酉阳是桃花和龚滩。点一枚，进它的专区。</p>
+    </div>
+    <div class="em-wall" id="emWall"></div>
+  </div>
+</section>
+
+<!-- ============ 民宿 ============ -->
+<section id="stay" class="sec sec-stay">
+  <div class="sec-head reveal">
+    <span class="sec-idx">05</span>
+    <h2 class="sec-title">山城民宿</h2>
+    <p class="sec-desc">从吊脚楼到悬崖玻璃房，重庆的住宿本身就是风景。按你想要的感觉挑一间。</p>
+  </div>
+  <div class="filter-bar reveal" id="stayFilter"></div>
+  <div class="stay-grid" id="stayGrid"></div>
+</section>
+
+<!-- ============ 人文 ============ -->
+<section id="culture" class="sec sec-culture">
+  <div class="sec-head reveal">
+    <span class="sec-idx">06</span>
+    <h2 class="sec-title">人文色彩</h2>
+    <p class="sec-desc">码头上的号子、巷子里的火锅、土家的摆手舞。三千年的巴渝，活在日常里。</p>
+  </div>
+
+  <div class="cul-flow reveal" id="culFlow"></div>
+
+  <div class="cul-duo reveal">
+    <div class="cul-card cul-dialect">
+      <h3>重庆话速成</h3>
+      <p class="cc-sub">不标准没关系，敢说就行</p>
+      <div class="dialect-list" id="dialectList"></div>
+      <button class="btn btn-sm" id="dialectBtn">换一批</button>
+    </div>
+    <div class="cul-card cul-food">
+      <h3>味觉地图</h3>
+      <p class="cc-sub">离开重庆就吃不着的那一口</p>
+      <div class="food-list" id="foodList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 民族 · 节庆 · 非遗 ============ -->
+<section id="folk" class="sec sec-folk">
+  <div class="sec-head reveal">
+    <span class="sec-idx">07</span>
+    <h2 class="sec-title">民族 · 节庆 · 非遗</h2>
+    <p class="sec-desc">重庆有 55 个民族成分，少数民族 200 万以上，其中土家族近 143 万、苗族约 50 万，
+      大半住在渝东南的武陵山里。他们赶年、跳摆手、绣苗绣、织西兰卡普——
+      这些不是展柜里的东西，是还在过的日子。</p>
+  </div>
+
+  <div class="fk-block reveal">
+    <h3 class="fk-h"><span class="fk-hi">壹</span>世居民族</h3>
+    <div class="fk-auton" id="fkAuton"></div>
+    <div class="fk-eth" id="fkEth"></div>
+  </div>
+
+  <div class="fk-block reveal">
+    <h3 class="fk-h"><span class="fk-hi">贰</span>节庆年轮</h3>
+    <p class="fk-sub">按农历转一圈。点哪个月，就看那个月的节——颜色越红，节庆越密。</p>
+    <div class="fk-cal">
+      <div class="fk-wheel" id="fkWheel"></div>
+      <div class="fk-month" id="fkMonth"></div>
+    </div>
+  </div>
+
+  <div class="fk-block reveal">
+    <h3 class="fk-h"><span class="fk-hi">叁</span>非遗图鉴</h3>
+    <p class="fk-sub">从川江号子到西兰卡普，从荣昌夏布到涪陵榨菜。点卡片展开看详情。</p>
+    <div class="fk-stat" id="fkStat"></div>
+    <div class="filter-bar" id="fkFilter"></div>
+    <div class="fk-grid" id="fkGrid"></div>
+  </div>
+
+  <div class="fk-block reveal">
+    <h3 class="fk-h"><span class="fk-hi">肆</span>活在日常里的民俗</h3>
+    <p class="fk-sub">不列入名录的那些，反而天天都在用。</p>
+    <div class="fk-life" id="fkLife"></div>
+  </div>
+</section>
+
+<!-- ============ 3D 模型 ============ -->
+<section id="model3d" class="sec sec-model">
+  <div class="sec-head reveal">
+    <span class="sec-idx">08</span>
+    <h2 class="sec-title">三维地标</h2>
+    <p class="sec-desc">九个地标，从崖壁上的吊脚楼到世界遗产石刻、从跨江索道到喀斯特天坑——
+      先以程序化示意呈现，每个都可一键替换为从网上下载的真实 .glb 模型（推荐素材见右侧面板）。</p>
+  </div>
+
+  <div class="md-wrap reveal">
+    <div class="md-stage" id="mdStage">
+      <canvas id="mdCanvas" role="img" aria-label="三维地标模型舞台，可交互：拖动旋转、滚轮缩放"></canvas>
+      <div class="md-hud">
+        <div class="md-modes" id="mdModes">
+          <button class="mm on" data-b="hongyadong">洪崖洞</button>
+          <button class="mm" data-b="siyuan">解放碑</button>
+          <button class="mm" data-b="diaojiao">吊脚楼</button>
+          <button class="mm" data-b="dazu">大足石刻</button>
+          <button class="mm" data-b="suodao">长江索道</button>
+          <button class="mm" data-b="litang">人民大礼堂</button>
+          <button class="mm" data-b="theatre">重庆大剧院</button>
+          <button class="mm" data-b="tiankeng">天生三桥</button>
+          <button class="mm" data-b="kuimen">夔门</button>
+        </div>
+        <label class="md-spin"><input type="checkbox" id="mdAuto"> 自动旋转</label>
+        <label class="md-spin"><input type="checkbox" id="mdHot" checked> 关节点</label>
+        <label class="md-spin"><input type="checkbox" id="mdTour"> 巡览</label>
+      </div>
+      <div class="md-tip">拖动旋转 · 滚轮缩放 · 点「选择 .glb 文件」或把 .glb 拖进舞台</div>
+      <div class="md-drop" id="mhDrop"><span>松开即载入</span></div>
+    </div>
+    <aside class="md-panel">
+      <h3 id="mdName">洪崖洞</h3>
+      <div class="md-meta" id="mdMeta"></div>
+      <p class="md-desc" id="mdDesc"></p>
+      <div class="md-facts" id="mdFacts"></div>
+      <div class="md-src" id="mdSrc"></div>
+      <div class="md-note">
+        <b>技术说明</b>
+        <span id="mdTech">当前是程序化示意模型。想换成真实模型：① 把下载好的 <code>.glb</code> 直接拖到左边舞台；② 或放进 <code>assets/models/{key}.glb</code>（key 见上方按钮），刷新即自动替换并打上「真实模型」标记。上方「推荐真实模型」里已列好网上能找到的真实素材链接。</span>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 外部模型接入 -->
+  <div class="mh-wrap reveal">
+    <div class="mh-box">
+      <h4 class="mh-h">载入外部模型</h4>
+      <div class="mh-ways">
+        <button class="mh-btn" id="mhPick">选择 .glb 文件</button>
+        <input type="file" id="mhFile" accept=".glb,.gltf" hidden>
+        <input class="mh-url" id="mhUrl" type="text" placeholder="或粘贴在线 .glb 直链（需对方允许跨域）">
+        <button class="mh-btn mh-btn-g" id="mhGo">载入</button>
+      </div>
+      <p class="mh-status" id="mhStatus">就绪。支持 .glb / .gltf，带骨骼动画的会自动播放。</p>
+
+      <h5 class="mh-h2">本地模型库 <span>assets/models/</span></h5>
+      <div class="mh-list" id="mhList"></div>
+    </div>
+
+    <div class="mh-box">
+      <h4 class="mh-h">去哪儿找模型 <span class="mh-sub">哪些要登录、授权怎么算</span></h4>
+      <div class="mh-sites" id="mhSites"></div>
+      <div class="mh-tipbox">
+        <b>下载后怎么用</b>
+        <ol>
+          <li>Sketchfab 下的是 <code>.zip</code>，解压得到 <code>scene.gltf + scene.bin + textures/</code>——
+            需要先用 <a href="https://gltf.report/" target="_blank" rel="noopener">gltf.report</a> 或 Blender 合并导出成单个 <code>.glb</code>。</li>
+          <li>拿到 <code>.glb</code> 后，<b>直接拖到左边舞台</b>就能看（不需要服务器、不需要改代码）。</li>
+          <li>想长期放进站点：丢进 <code>assets/models/</code>，在 <code>manifest.js</code> 里加一条，用本地服务器打开页面即可。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 猜地方 ============ -->
+<section id="guess" class="sec sec-guess">
+  <div class="sec-head reveal">
+    <span class="sec-idx">09</span>
+    <h2 class="sec-title">猜地方</h2>
+    <p class="sec-desc">先给你一张几十年前的老照片，猜猜是哪。点一下照片，时间会快进到今天。</p>
+  </div>
+
+  <div class="gs-wrap reveal">
+    <div class="gs-scorebar">
+      <div class="gs-prog"><span id="gsIdx">1</span> / <span id="gsTotal">8</span></div>
+      <div class="gs-score">答对 <b id="gsRight">0</b> · 连击 <b id="gsCombo">0</b></div>
+    </div>
+
+    <div class="gs-photo" id="gsPhoto" role="button" tabindex="0" aria-label="点击切换到今照">
+      <div class="gs-frame">
+        <div class="gs-img old" id="gsOld"></div>
+        <div class="gs-img new" id="gsNew"></div>
+        <div class="gs-scan" id="gsScan"></div>
+        <div class="gs-stamp" id="gsStamp">老照片</div>
+        <div class="gs-hint" id="gsHint">点击照片 → 时间快进</div>
+      </div>
+      <div class="gs-caption" id="gsCaption">—</div>
+    </div>
+
+    <div class="gs-options" id="gsOptions"></div>
+    <div class="gs-result" id="gsResult"></div>
+    <div class="gs-ctrl">
+      <button class="btn btn-ghost btn-sm" id="gsSkip">跳过</button>
+      <button class="btn btn-primary btn-sm" id="gsNext" hidden>下一张 →</button>
+      <button class="btn btn-ghost btn-sm" id="gsRestart" hidden>再来一轮</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-l">
+      <div class="foot-mark">重慶</div>
+      <p>行千里 · 致广大</p>
+    </div>
+    <div class="foot-r">
+      <p>本站为地理人文可视化演示项目。地形由高程控制点插值与分形噪声生成，
+        用于呈现重庆"山—水—城"的整体格局，不作测绘依据。</p>
+      <p class="foot-dim">轮廓与高程参考公开地理资料 · 三维由 WebGL 实时渲染</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 全部 defer：按序执行、不阻塞 HTML 解析；渲染模块依赖 three.min.js 与 perf.js，书写顺序即依赖声明 -->
+<script defer src="assets/js/vendor/three.min.js"></script>
+<script defer src="assets/js/district-links.js?v=20261017c"></script>
+<script defer src="assets/js/data.js?v=20261017l"></script>
+<script defer src="assets/js/bounds.js"></script>
+<script defer src="assets/js/perf.js"></script>
+<script defer src="assets/js/dem-data.js"></script>
+<script defer src="assets/js/dem-sat.js"></script>
+<script defer src="assets/js/clouds-data.js"></script>
+<script defer src="assets/js/wordcloud.js"></script>
+<script defer src="assets/js/stay-art.js"></script>
+<script defer src="assets/js/terrain.js?v=20261019o"></script>
+<script defer src="assets/js/landmark3d.js?v=20261019w"></script>
+<script defer src="assets/js/history-data.js"></script>
+<script defer src="assets/js/history.js?v=20261018a"></script>
+<script defer src="assets/js/rail-data.js"></script>
+<script defer src="assets/js/rail.js"></script>
+<script defer src="assets/js/folk-data.js"></script>
+<script defer src="assets/js/emblems-data.js"></script>
+<script defer src="assets/js/emblems.js"></script>
+<script defer src="assets/js/folk.js?v=20261017f"></script>
+<script defer src="assets/js/vendor/GLTFLoader.js"></script>
+<script defer src="assets/models/manifest.js"></script>
+<script defer src="assets/js/models.js"></script>
+<script defer src="assets/js/scenes.js"></script>
+<script defer src="assets/js/guess.js?v=20261017c"></script>
+<script defer src="assets/js/link3d.js?v=20261019a"></script>
+<script defer src="assets/js/riverline.js?v=20261019c"></script>
+<script defer src="assets/js/main.js?v=20261019a"></script>
+<script defer src="assets/js/pagefx.js?v=20261019k"></script>
+<script defer src="assets/js/districtfx.js?v=20261019e"></script>
+<script defer src="assets/js/agent.js?v=20261019b"></script>
+</body>
+</html>

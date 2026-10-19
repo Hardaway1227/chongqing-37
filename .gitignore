@@ -1,0 +1,25 @@
+# 依赖与构建产物
+node_modules/
+package-lock.json
+
+# 工作区临时文件（截图、备份、调试脚本），但保留生成器与数据
+.workbuddy/*
+!.workbuddy/gen-detail.py
+!.workbuddy/gen-culture.py
+!.workbuddy/crawl-s6.js
+!.workbuddy/spot-audit.json
+!.workbuddy/HANDOFF.md
+!.workbuddy/memory/
+!.workbuddy/memory/**
+
+# 截图目录与临时脚本
+shots/
+_*.js
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log

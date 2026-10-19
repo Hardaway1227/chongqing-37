@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>区县专区 — 山城·重庆</title>
+<meta name="description" content="重庆 38 个区县专区：地貌词云、特色词条、民宿、民族节庆与非遗。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/style.css?v=20261017b">
+<link rel="stylesheet" href="wanzhou/fonts/fonts.css">
+<style>
+.d404{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0a0d12;color:#eaf0f8;font-family:"Ma Shan Zheng","STKaiti","KaiTi",cursive}
+.d404-card{text-align:center;padding:56px 64px;border:1px solid rgba(255,255,255,.09);border-radius:20px;background:rgba(255,255,255,.045);backdrop-filter:blur(18px);box-shadow:0 14px 40px rgba(0,0,0,.38)}
+.d404-card h1{font-size:44px;font-weight:400;background:linear-gradient(120deg,#FF9F1C,#FFD28A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.d404-card p{font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#aeb9c9;font-size:14.5px;margin-bottom:26px}
+.d404-card a{display:inline-block;color:#eaf0f8;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.17);padding:10px 24px;border-radius:99px;font-family:"PingFang SC",sans-serif;transition:.25s}
+.d404-card a:hover{border-color:#FF9F1C;color:#FF9F1C}
+</style>
+<script>
+(function(){
+  var m=location.search.match(/[?&]d=([^&]+)/);
+  if(!m)return;
+  var name=decodeURIComponent(m[1]);
+  var SLUG={"渝中区":"yuzhong","江北区":"jiangbei","南岸区":"nanan","沙坪坝区":"shapingba","九龙坡区":"jiulongpo","大渡口区":"dadukou","渝北区":"yubei","巴南区":"banan","北碚区":"beibei","涪陵区":"fuling","长寿区":"changshou","江津区":"jiangjin","合川区":"hechuan","永川区":"yongchuan","南川区":"nanchuan","綦江区":"qijiang","大足区":"dazu","璧山区":"bishan","铜梁区":"tongliang","潼南区":"tongnan","荣昌区":"rongchang","开州区":"kaizhou","梁平区":"liangping","城口县":"chengkou","丰都县":"fengdu","垫江县":"dianjiang","忠县":"zhongxian","云阳县":"yunyang","奉节县":"fengjie","巫山县":"wushan","巫溪县":"wuxi","黔江区":"qianjiang","武隆区":"wulong","石柱县":"shizhu","秀山县":"xiushan","酉阳县":"youyang","彭水县":"pengshui","万州区":"wanzhou"};
+  var s=SLUG[name];
+  if(name==="万州区"){location.replace("wanzhou/index.html");}else if(s){location.replace("districts/"+s+".html");}
+  else{
+    document.addEventListener("DOMContentLoaded",function(){
+      document.body.innerHTML='<div class="d404"><div class="d404-card"><h1>未找到该区县</h1><p>「'+name+'」不在重庆 37 个区县之列，请从总览页重新选择。</p><a href="index.html">← 回到重庆总览</a></div></div>';
+    });
+  }
+})();
+</script>
+</head>
+<body>
+
+<noscript>
+  <div class="noscript-tip">
+    <div class="ns-mark">重慶</div>
+    <p>本站的区县专区内容需要启用 JavaScript 才能动态载入。<br>
+       请在浏览器设置中开启 JavaScript 后刷新此页面。</p>
+  </div>
+</noscript>
+
+<!-- ============ 导航 ============ -->
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="index.html"><span class="lg-cn">重庆</span><span class="lg-en">CHONGQING</span></a>
+  <ul class="nav-list">
+    <li><a href="index.html#terrain" class="nl">地形</a></li>
+    <li><a href="index.html#cloud" class="nl">词云</a></li>
+    <li><a href="index.html#stay" class="nl">民宿</a></li>
+    <li><a href="index.html#culture" class="nl">人文</a></li>
+    <li><a href="index.html#folk" class="nl">民俗</a></li>
+    <li><a href="index.html#model3d" class="nl">三维</a></li>
+    <li><a href="index.html#guess" class="nl">猜地方</a></li>
+    <li class="nav-drop"><button class="nl" id="navDist" aria-haspopup="true" aria-expanded="false">区县 ▾</button></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="菜单"><i></i><i></i><i></i></button>
+  <div class="nav-menu" id="navMenu"></div>
+</nav>
+
+<!-- ============ 区县抬头 ============ -->
+<header class="dh" id="dh">
+  <div class="dh-bg" id="dhBg"></div>
+  <div class="dh-body">
+    <div class="dh-seal" id="dhSeal" aria-hidden="true"></div>
+    <a class="dh-back" href="index.html#terrain">← 返回主站</a>
+    <div class="dh-line">
+      <h1 class="dh-name" id="dhName">—</h1>
+      <span class="dh-tag" id="dhTag">—</span>
+    </div>
+    <div class="dh-shape" id="dhShape">—</div>
+    <p class="dh-desc" id="dhDesc">—</p>
+    <div class="dh-stats" id="dhStats"></div>
+    <div class="dh-marks" id="dhMarks"></div>
+  </div>
+  <div class="dh-jump">
+    <button class="dj-btn" id="djPrev">← 上一个</button>
+    <select class="dj-sel" id="djSel" aria-label="切换区县"></select>
+    <button class="dj-btn" id="djNext">下一个 →</button>
+  </div>
+</header>
+
+<!-- ============ 词云 ============ -->
+<section class="dsec dsec-cloud" id="dCloud">
+  <div class="dsec-head">
+    <span class="dsec-idx">01</span>
+    <h2>地貌词云</h2>
+    <p class="dsec-sub" id="dcNote">—</p>
+  </div>
+  <div class="dc-wrap">
+    <div class="dc-stage">
+      <div class="wc-shape" id="dcStage"></div>
+      <div class="wc-tip" id="dcTip"></div>
+    </div>
+    <aside class="dc-side">
+      <div class="dc-legend" id="dcLegend"></div>
+      <div class="dc-card" id="dcDetail">
+        <div class="wd-empty"><div class="wd-icon">◈</div><p>点一个词<br>这里出详情</p></div>
+      </div>
+      <div class="dc-stat" id="dcStat"></div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ 词条全览 ============ -->
+<section class="dsec dsec-words" id="dwWords">
+  <div class="dsec-head">
+    <span class="dsec-idx">02</span>
+    <h2>词条全览</h2>
+    <p class="dsec-sub">这个地方的全部词条，按类别摊开。</p>
+  </div>
+  <div class="dw-cats" id="dwCats"></div>
+</section>
+
+<!-- ============ 住在这儿 ============ -->
+<section class="dsec dsec-stay">
+  <div class="dsec-head">
+    <span class="dsec-idx">03</span>
+    <h2>住在这儿</h2>
+    <p class="dsec-sub" id="dsSub">—</p>
+  </div>
+  <div class="d-stays" id="dStays"></div>
+</section>
+
+<!-- ============ 民族 · 节庆 · 非遗 ============ -->
+<section class="dsec dsec-folk">
+  <div class="dsec-head">
+    <span class="dsec-idx">04</span>
+    <h2>民族 · 节庆 · 非遗</h2>
+    <p class="dsec-sub">在这片地界上活着的那些东西。</p>
+  </div>
+  <div class="df-block" id="dfEthWrap">
+    <h3 class="df-h">世居民族</h3>
+    <div class="df-eth" id="dfEth"></div>
+  </div>
+  <div class="df-block" id="dfFestWrap">
+    <h3 class="df-h">节庆</h3>
+    <div class="df-fest" id="dfFest"></div>
+  </div>
+  <div class="df-block" id="dfIchWrap">
+    <h3 class="df-h">非遗</h3>
+    <div class="df-ich" id="dfIch"></div>
+  </div>
+</section>
+
+<!-- ============ 邻近 ============ -->
+<section class="dsec dsec-near">
+  <div class="dsec-head">
+    <span class="dsec-idx">05</span>
+    <h2>邻近区县</h2>
+    <p class="dsec-sub">按直线距离算出来的邻居，点一下就过去。</p>
+  </div>
+  <div class="d-near" id="dNear"></div>
+</section>
+
+<!-- ============ 万州深度（仅万州区显示） ============ -->
+<section class="dsec dsec-wz" id="wz" hidden>
+  <div class="dsec-head">
+    <span class="dsec-idx">06</span>
+    <h2>万州深度 · 三峡明珠</h2>
+    <p class="dsec-sub">原创万州旅游专页完整接入——景点、美食、历史、交通，每张卡片点开就是全文详情。</p>
+  </div>
+
+  <div class="wz-hero" id="wzHero"></div>
+
+  <div class="wz-about" id="wzAbout"></div>
+
+  <div class="wz-block" id="wz-history">
+    <div class="wz-bh"><h3>历史人文</h3><span>千年文脉绵延，从三国烽烟到高峡平湖</span></div>
+    <div class="wz-hist" id="wzHistory"></div>
+  </div>
+
+  <div class="wz-block" id="wz-scenic">
+    <div class="wz-bh"><h3>热门景点</h3><span>自然奇观与人文胜迹于一体，每一处都值得细细品味</span></div>
+    <div class="wz-filters" id="wzFilters"></div>
+    <div class="wz-scenic" id="wzScenic"></div>
+  </div>
+
+  <div class="wz-block" id="wz-food">
+    <div class="wz-bh"><h3>特色美食</h3><span>中国烤鱼之乡，麻辣鲜香的三峡风味</span></div>
+    <div class="wz-food" id="wzFood"></div>
+  </div>
+
+  <div class="wz-block" id="wz-traffic">
+    <div class="wz-bh"><h3>交通指南</h3><span>高铁、航空、水运、高速路网四通八达，三峡旅游核心集散地</span></div>
+    <div class="wz-traffic" id="wzTraffic"></div>
+  </div>
+
+  <a class="wz-more" href="wanzhou/index.html">
+    <b>打开完整万州旅游站</b>
+    <span>11 个详情分页 · 图片与文案均为原作 →</span>
+  </a>
+</section>
+
+<!-- ============ 区县深度（万州区以外的 37 个区县显示） ============ -->
+<section class="dsec dsec-dp" id="dp" hidden>
+  <div class="dsec-head">
+    <span class="dsec-idx">06</span>
+    <h2 id="dpTitle">区县深度</h2>
+    <p class="dsec-sub" id="dpSub">—</p>
+  </div>
+
+  <div class="dp-hero" id="dpHero"></div>
+
+  <div class="dp-about" id="dpAbout"></div>
+
+  <div class="dp-block" id="dp-scenic">
+    <div class="dp-bh"><h3>招牌风景</h3><span>按词条权重排序的地方名片</span></div>
+    <div class="dp-filters" id="dpFilters"></div>
+    <div class="dp-grid" id="dpSpots"></div>
+  </div>
+
+  <div class="dp-block" id="dp-food">
+    <div class="dp-bh"><h3>舌尖上的区县</h3><span>从这里走出去的地域名片</span></div>
+    <div class="dp-grid dp-grid-s" id="dpFoods"></div>
+  </div>
+
+  <div class="dp-block" id="dp-cul">
+    <div class="dp-bh"><h3>人文与传承</h3><span>活在这片地界上的东西</span></div>
+    <div class="dp-grid dp-grid-s" id="dpCuls"></div>
+  </div>
+
+  <div class="dp-tip" id="dpTip"></div>
+
+  <div class="dp-links">
+    <a class="dp-link dp-link-page" id="dpPageLink" href="#"><b>打开「<em id="dpPageName">区县</em>」完整详情页</b><span>真实照片 + 景点·美食·人文一页看尽 →</span></a>
+    <a class="dp-link dp-link-main" href="#dCloud"><b>在立体词云中查看<em id="dpLinkName"></em></b><span>点这个词，看它在地形上亮起来 →</span></a>
+    <a class="dp-link" href="#dwWords"><b>浏览全部词条</b><span>按类别摊开的所有关键词 →</span></a>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-l">
+      <div class="foot-mark">重慶</div>
+      <p>行千里 · 致广大</p>
+    </div>
+    <div class="foot-r">
+      <p><a href="index.html" class="foot-link">← 回到主站</a>　·　
+         本站为地理人文可视化演示项目，地形由高程控制点插值与分形噪声生成，不作测绘依据。</p>
+      <p class="foot-dim">轮廓与高程参考公开地理资料 · 三维由 WebGL 实时渲染</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 全部 defer：按序执行、不阻塞 HTML 解析 -->
+<script defer src="assets/js/district-links.js"></script>
+<script defer src="assets/js/data.js"></script>
+<script defer src="assets/js/clouds-data.js"></script>
+<script defer src="assets/js/wordcloud.js"></script>
+<script defer src="assets/js/stay-art.js"></script>
+<script defer src="assets/js/district-scenes.js"></script>
+<script defer src="assets/js/districts-deep-data.js"></script>
+<script defer src="assets/js/photo-map.js"></script>
+<script defer src="assets/js/folk-data.js"></script>
+<script defer src="assets/js/wanzhou-data.js"></script>
+<script defer src="assets/js/emblems-data.js"></script>
+<script defer src="assets/js/emblems.js"></script>
+<script defer src="assets/js/district.js"></script>
+</body>
+</html>

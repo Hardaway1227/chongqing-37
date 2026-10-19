@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西山公园 · 畅游万州</title>
+    <link href="../fa/font-awesome.min.css" rel="stylesheet">
+    <link href="../fonts/fonts.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #F5F4F0;
+            background-image:
+                    url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 8px 32px rgba(10,77,139,0.06); }
+        .btn-hover { transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+        .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -8px rgba(10,77,139,0.35); }
+        .btn-hover:active { transform: scale(0.97); }
+        .decor-line { height: 3px; background: linear-gradient(90deg, #0A4D8B, #D4A853 40%, #2E7D71 70%, #D4A853); width: 90px; margin: 0 auto; border-radius: 2px; position: relative; }
+        .decor-line::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: #D4A853; border-radius: 50%; box-shadow: 0 0 8px rgba(212,168,83,0.5); }
+        .font-display { font-family: 'Ma Shan Zheng', cursive; }
+        .font-serif { font-family: 'Noto Serif SC', serif; }
+        .text-gradient { background: linear-gradient(135deg, #0A4D8B 0%, #2E7D71 60%, #D4A853 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .card-hover { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(10,77,139,0.2); }
+        .stat-card { transition: all 0.3s ease; }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(10,77,139,0.12); }
+        .fixed-btn { box-shadow: 0 10px 30px rgba(10,77,139,0.35); transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+        .fixed-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(10,77,139,0.45); }
+        .timeline-dot { position: relative; }
+        .timeline-dot::before { content: ''; position: absolute; left: -28px; top: 8px; width: 12px; height: 12px; background: #D4A853; border-radius: 50%; box-shadow: 0 0 8px rgba(212,168,83,0.5); }
+        .timeline-line { border-left: 2px dashed rgba(10,77,139,0.15); padding-left: 28px; margin-left: 5px; }
+    </style>
+<link rel="stylesheet" href="../tw.css">
+</head>
+<body class="font-serif text-gray-800 scroll-smooth antialiased">
+
+<header class="glass fixed w-full top-0 z-50 py-4 px-6 flex items-center justify-between">
+    <a href="../index.html" class="text-xl font-display font-bold text-river"><i class="fa fa-arrow-left mr-2"></i>万州旅游</a>
+    <a href="../index.html#scenic" class="text-golden font-bold"><i class="fa fa-th-large mr-1"></i>返回景点列表</a>
+</header>
+
+<section class="pt-20 pb-8 bg-gradient-to-b from-green-50 to-warm">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <img src="../../assets/pic/xi2.png" alt="西山公园" class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
+        <div class="mt-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-display font-bold mb-2 text-gradient">西山公园</h1>
+            <p class="text-xl text-river font-semibold">全国名园 · 国家AAA级旅游景区 · 重庆首批历史名园 · 万州百年城市记忆</p>
+            <div class="decor-line mt-4"></div>
+        </div>
+    </div>
+</section>
+
+<section class="py-10">
+    <div class="container mx-auto px-4 max-w-4xl">
+
+        <!-- 公园概述 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🌳 百年名园：万州的城市绿肺</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                西山公园位于重庆市万州区主城西南端长江畔，背靠太白岩，面临长江，因明代在此兴建"西山观"而得名。公园始建于1924年（初名万县商埠公园），由当时驻扎万县的军阀杨森筹建，1928年正式定名"西山公园"并沿用至今，是<strong class="text-golden">长江沿岸建园历史最悠久的公园之一</strong>，也是全国最早著名公园之一、全国著名古茶花园之一[reference:0]。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                历经百年沧桑，西山公园先后更名多次：1926年因"九五惨案"更名为"9.5公园"（朱德曾亲笔题写匾额），1928年为纪念北伐战争胜利更名为"中山公园"[reference:1]。1999年被中国公园协会评为<strong class="text-river">"中国名园"</strong>，2021年入选重庆市首批历史名园名录，2023年获评"重庆市重点公园"和"国家AAA级旅游景区"，2026年西山公园——钟楼片区获评<strong class="text-golden">市级历史文化街区</strong>[reference:2][reference:3]。园内完整保存着西山钟楼（全国重点文物保护单位）、库里申科陵墓（全国重点烈士纪念建筑）、抗战阵亡将士纪念碑等核心文保单位[reference:4]。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700">
+                公园占地面积约600亩（约40公顷），园区地形呈南北向狭长型，最高点海拔233米，最低点海拔175米[reference:5]。园内植物资源极为丰富，有95科、160属、320多种观赏花木，以亚热带常绿阔叶混交林为主，保存有4项重庆市古树名木之最，其中300年以上树龄的古茶树23株、500余个山茶品种获国际茶花协会认证，2016年获评<strong class="text-golden">"国际杰出茶花园"</strong>[reference:6][reference:7]。
+            </p>
+            <div class="flex gap-3 mt-4">
+                <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">国家AAA级景区</span>
+                <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">百年历史名园</span>
+                <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">中国名园</span>
+            </div>
+        </div>
+
+        <!-- 关键数据 -->
+        <div class="grid md:grid-cols-4 gap-4 mb-8">
+            <div class="glass rounded-2xl p-5 text-center stat-card">
+                <div class="text-4xl font-display font-bold text-river">600<span class="text-lg">亩</span></div>
+                <p class="text-xs text-gray-600 mt-1">公园面积</p>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center stat-card">
+                <div class="text-4xl font-display font-bold text-jade">1924<span class="text-lg">年</span></div>
+                <p class="text-xs text-gray-600 mt-1">始建时间</p>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center stat-card">
+                <div class="text-4xl font-display font-bold text-golden">320+<span class="text-lg">种</span></div>
+                <p class="text-xs text-gray-600 mt-1">观赏花木</p>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center stat-card">
+                <div class="text-4xl font-display font-bold text-coral">3A<span class="text-lg"></span></div>
+                <p class="text-xs text-gray-600 mt-1">国家级景区等级</p>
+            </div>
+        </div>
+
+        <!-- 历史沿革时间线 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-6">📜 百年沧桑：历史沿革</h2>
+            <div class="space-y-5">
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">明代</span>
+                    <h4 class="text-lg font-bold text-ink">西山观始建</h4>
+                    <p class="text-gray-600 text-sm">明代在此兴建"西山观"，西山公园名称即由此而来。公园历史可追溯至此。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">1924年</span>
+                    <h4 class="text-lg font-bold text-ink">万县商埠公园成立</h4>
+                    <p class="text-gray-600 text-sm">公园初建，定名"万县商埠公园"，由驻扎万县的军阀杨森筹建，杨森军部秘书兼万县商埠局秘书长李寰担任公园管理所所长[reference:8]。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">1925-1928年</span>
+                    <h4 class="text-lg font-bold text-ink">杨森筹建 · 面积扩大至560余亩</h4>
+                    <p class="text-gray-600 text-sm">川军老将王陵基为新园区题词"西山"，公园更名为"西山公园"并沿用至今[reference:9][reference:10]。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">1926年9月</span>
+                    <h4 class="text-lg font-bold text-ink">九五惨案 · 更名"9.5公园"</h4>
+                    <p class="text-gray-600 text-sm">英舰炮轰万县造成"九五惨案"，公园更名为"9.5公园"，朱德总司令亲笔题写匾额[reference:11]。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">1928年11月</span>
+                    <h4 class="text-lg font-bold text-ink">北伐胜利 · 更名"中山公园"</h4>
+                    <p class="text-gray-600 text-sm">为纪念北伐战争胜利，公园更名为"中山公园"[reference:12]。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">1930-1932年</span>
+                    <h4 class="text-lg font-bold text-ink">西山钟楼建成</h4>
+                    <p class="text-gray-600 text-sm">钟楼始建于1930年，1932年8月落成，通高50.24米，共12层，与上海海关钟楼、武汉江汉关钟楼并称长江沿岸三大钟楼[reference:13]。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">1939年</span>
+                    <h4 class="text-lg font-bold text-ink">库里申科牺牲</h4>
+                    <p class="text-gray-600 text-sm">苏联援华空军志愿队轰炸机大队队长格里戈里·库里申科在对日作战中于万县坠机牺牲，年仅36岁，葬于西山公园内[reference:14]。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">1958年</span>
+                    <h4 class="text-lg font-bold text-ink">周恩来总理参观钟楼</h4>
+                    <p class="text-gray-600 text-sm">周恩来总理亲临西山钟楼并阅览格言碑[reference:15]。同年库里申科烈士墓园建成。</p>
+                </div>
+                <div class="timeline-line timeline-dot">
+                    <span class="text-sm text-golden font-bold">2021-2026年</span>
+                    <h4 class="text-lg font-bold text-ink">市级历史名园 · 历史文化街区</h4>
+                    <p class="text-gray-600 text-sm">2021年入选重庆市首批历史名园名录；2023年获评"重庆市重点公园"和国家AAA级旅游景区；2026年西山公园——钟楼片区获评市级历史文化街区[reference:16][reference:17]。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 西山钟楼 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🕰️ 西山钟楼：长江三大钟楼之一</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                西山钟楼位于西山公园内，始建于1930年，1932年8月落成，占地面积169平方米，楼体为正方形，<strong class="text-golden">通高50.24米，共12层</strong>，双层盔式八角形尖顶[reference:18]。这座中西合璧的建筑造型精美、雄伟壮观，与上海海关钟楼、武汉江汉关钟楼并称<strong class="text-river">长江沿岸三大钟楼</strong>，自建成以来一直是万州的标志性建筑物[reference:19]。
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 mb-4">
+                <div class="bg-warm rounded-2xl p-5">
+                    <h4 class="text-lg font-bold text-ink mb-2">🕐 城市的"计时器"</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">在钟表尚未普及的年代，西山钟楼的大钟成了万州最著名的计时器。楼顶下部装置亨得利立钟机芯，敲击上部硕大的铜铸吊钟，转动镶嵌在第六层外墙上的四个巨大圆形钟面指针，进行整点报时和显示时间，悠扬的钟声从此成为万州人心中最熟悉的记忆[reference:20]。</p>
+                </div>
+                <div class="bg-warm rounded-2xl p-5">
+                    <h4 class="text-lg font-bold text-ink mb-2">📝 格言碑与毛泽东诗词</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">钟楼底层为厅，厅正中立有高8米、宽1.3米的方形石碑，原刻处事格言碑文。1958年周恩来总理亲临钟楼并阅览格言碑。1964年改刻毛泽东诗词，分别为《沁园春·雪》《浣溪沙》《水调歌头·长江》《长征诗》[reference:21]。</p>
+                </div>
+            </div>
+            <p class="text-lg leading-relaxed text-gray-700">
+                西山钟楼现为<strong class="text-golden">全国重点文物保护单位</strong>，被誉为"万州八景"之一的"西山夕照"即以此命名。自1930年建成以来，一直吸引着过往名人和八方来宾登楼一览江城风采。底层有螺旋形铁梯直上楼顶，登高远眺，长江如带、万州全城尽收眼底[reference:22]。
+            </p>
+            <div class="flex gap-3 mt-4">
+                <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">全国重点文保</span>
+                <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">长江三大钟楼</span>
+                <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">周恩来参观</span>
+            </div>
+        </div>
+
+        <!-- 库里申科墓园 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🕊️ 库里申科墓园：中苏友谊的丰碑</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                格里戈里·阿基莫维奇·库里申科，是<strong class="text-golden">苏联援华空军志愿队轰炸机大队队长</strong>。1939年，库里申科率队轰炸日军武汉基地，返航途中因座机受损，在万县上空坠入长江壮烈牺牲，年仅36岁。当地军民奋力将其打捞安葬于西山公园内。1958年，库里申科烈士墓园建成，含1385.7平方米纪念广场、青铜塑像及方形墓室，影壁刻有"中苏友谊万岁"字样[reference:23][reference:24]。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                库里申科烈士墓园被列为<strong class="text-river">全国重点烈士纪念建筑</strong>。每年清明节和库里申科牺牲纪念日，万州各界人士都会来到墓园敬献花篮，缅怀这位为中国人民抗日战争献出生命的国际主义战士。墓园的苏式建筑风格庄严肃穆，绿树环绕，是西山公园精神瞻仰区的核心。
+            </p>
+            <div class="flex gap-3 mt-4">
+                <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">全国重点烈士纪念建筑</span>
+                <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">苏联援华烈士</span>
+                <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">1939年牺牲</span>
+            </div>
+        </div>
+
+        <!-- 五大功能分区 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🗺️ 五大功能分区</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                2022年完成综合改造后，西山公园形成<strong class="text-golden">五大功能分区</strong>[reference:25]：
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">🚪</div>
+                    <h4 class="font-bold text-ink">入口形象区</h4>
+                    <p class="text-xs text-gray-600">包含主入口景观及导览系统，为游客提供清晰的游览指引。</p>
+                </div>
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">🏛️</div>
+                    <h4 class="font-bold text-ink">历史文化保护区</h4>
+                    <p class="text-xs text-gray-600">集中展示钟楼、抗战阵亡将士纪念碑等文保单位，见证百年风云。</p>
+                </div>
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">🏡</div>
+                    <h4 class="font-bold text-ink">古典自然静园区</h4>
+                    <p class="text-xs text-gray-600">以静园为核心的江南园林景观，包含古树群、叠石瀑布与听雨轩等仿古建筑。</p>
+                </div>
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">🕊️</div>
+                    <h4 class="font-bold text-ink">精神瞻仰区</h4>
+                    <p class="text-xs text-gray-600">涵盖库里申科墓园等纪念设施，承载抗战记忆与中苏友谊。</p>
+                </div>
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">🌲</div>
+                    <h4 class="font-bold text-ink">森林休闲区</h4>
+                    <p class="text-xs text-gray-600">保留原生楠木林与湿地生态系统，为市民提供天然氧吧。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要景区 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🏞️ 三大主要景区</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                西山公园分为<strong class="text-golden">钟楼景区、五洲池景区和静园</strong>三个主要景区，中部有茶花、腊梅、楠木、竹类为主体的观赏植物园景区[reference:26]。
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">🕰️</div>
+                    <h4 class="font-bold text-ink">钟楼景区</h4>
+                    <p class="text-xs text-gray-600">以西山钟楼为核心，含抗战阵亡将士纪念碑、库里申科墓园等历史文保单位。</p>
+                </div>
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">💧</div>
+                    <h4 class="font-bold text-ink">五洲池景区</h4>
+                    <p class="text-xs text-gray-600">以水池景观为主体，周围散布游乐场、游泳池等综合服务设施。</p>
+                </div>
+                <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+                    <div class="text-3xl mb-2">🌸</div>
+                    <h4 class="font-bold text-ink">静园 · 江南园林</h4>
+                    <p class="text-xs text-gray-600">1925年初建，2011年重修后形成9000平方米江南园林，地面铺装采用老石板与青砖，搭配红枫、罗汉松等观赏树种[reference:27]。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 静园 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🏡 静园：百年古园的江南韵味</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                静园是西山公园中最具古典韵味的"园中园"，其前身就是最早的"商埠公园"，已有近百年历史[reference:28]。1925年初建，2011年重修后形成9000平方米的江南园林景观。园内亭台楼阁，假山怪石，花坛盆景，点缀其间。玲珑精致的楼阁白墙青瓦，雕花交错雕刻在棕褐色的木门上，绿树成荫，朦朦胧胧的感觉让人对前方充满憧憬[reference:29]。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700">
+                静园布局包含古树群、叠石瀑布与听雨轩等仿古建筑，地面铺装采用老石板与青砖，搭配红枫、罗汉松等观赏树种[reference:30]。置身其中，仿佛穿越回百年前的万县商埠时代，是拍摄复古风格照片的绝佳去处。
+            </p>
+            <div class="flex gap-3 mt-4">
+                <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">9000平方米</span>
+                <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">江南园林</span>
+                <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">百年古园</span>
+            </div>
+        </div>
+
+        <!-- 古山茶园 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🌸 国际杰出茶花园</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                西山公园是全国著名古茶花园之一，现存<strong class="text-golden">300年以上树龄古茶树23株</strong>，500余个山茶品种获国际茶花协会认证。2016年，西山公园获评<strong class="text-river">"国际杰出茶花园"</strong>，成为万州一张亮丽的园艺名片。每年山茶花开的季节，各色茶花争奇斗艳，从公园北门附近的步梯到东门附近的植物园，数百个品种次第绽放，赏心悦目，吸引大量市民和游客前来观赏[reference:31][reference:32]。
+            </p>
+            <div class="flex gap-3 mt-4">
+                <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">23株古茶树</span>
+                <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">国际杰出茶花园</span>
+                <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">500+品种</span>
+            </div>
+        </div>
+
+        <!-- 动物园 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">🐼 万州动物园</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-3">
+                西山公园动物园位于公园半山腰上，是收费的园中园，门票25元。园内常年展出的有七八百只动物，其中不乏<strong class="text-golden">大熊猫、华南虎</strong>等"国宝级"珍稀动物[reference:33]。动物园是亲子游的热门去处，孩子们可以在绿树掩映中近距离观察各种珍禽异兽。据最新消息，新的万州动物园正在规划建设中，届时动物们将迁入更宽敞的新家[reference:34]。
+            </p>
+            <div class="flex gap-3 mt-4">
+                <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">大熊猫</span>
+                <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">华南虎</span>
+                <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">25元门票</span>
+            </div>
+        </div>
+
+        <!-- 游览实用信息 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">📋 游览实用信息</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-warm rounded-2xl p-5">
+                    <h4 class="text-lg font-bold text-ink mb-3">🕐 开放信息</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">景区类型</span><span>城市公园（国家AAA级）</span></div>
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">开放时间</span><span>06:00 — 22:00（全年开放）</span></div>
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">门票</span><span>免费（动物园另收25元）</span></div>
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">建议时长</span><span>2 — 3小时</span></div>
+                    </div>
+                </div>
+                <div class="bg-warm rounded-2xl p-5">
+                    <h4 class="text-lg font-bold text-ink mb-3">📍 地址与交通</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">公园地址</span><span>万州区王牌路13号</span></div>
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">景区电话</span><span>023-58221020</span></div>
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">公交线路</span><span>万州1路、6路、10路等多条线路可达</span></div>
+                        <div class="flex items-center gap-3"><span class="text-river font-bold w-24">公交站</span><span>西山公园站 / 三峡中心医院站</span></div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">※ 公园免费开放，是市民日常休闲健身的热门场所。动物园位于半山腰，门票25元。公园北门进入后是一段下坡梯步，展现了万州"山城"特色。公园内设施不断完善，目前正在积极创建国家4A级景区[reference:35]。以上信息供参考，具体以景区实际公告为准。</p>
+        </div>
+
+        <!-- 诗咏西山 -->
+        <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+            <h2 class="text-2xl font-display font-bold text-river mb-4">📝 诗咏西山</h2>
+            <div class="bg-warm rounded-2xl p-6 text-center">
+                <p class="text-xl italic text-gray-600 leading-relaxed">"凡夔州一道，东望巫峡，西尽存阝马阝，<br>林泉之胜，莫与南浦争长者也！"<br><span class="text-sm text-golden mt-2 inline-block">——黄庭坚《西山题记》（1101年）</span></p>
+            </div>
+            <p class="text-sm text-gray-500 mt-3 text-center">北宋书法家黄庭坚900余年前游览西山后，发出了"林泉之胜，莫与南浦争长"的由衷赞叹。从明代的西山观到1924年的商埠公园，从抗战的烽火硝烟到今日的城市绿肺——西山公园以它百年的岁月积淀与深厚的文化底蕴，静静守望着这座长江之畔的古城，等待着每一位热爱历史与自然的旅人。</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- 底部导航按钮 -->
+<div class="fixed bottom-6 left-0 right-0 flex justify-center z-50 px-4">
+    <a href="https://uri.amap.com/navigation?to=108.380,30.800,西山公园" target="_blank"
+       class="fixed-btn bg-river text-white px-8 py-4 rounded-full text-lg font-bold btn-hover flex items-center gap-3 shadow-2xl">
+        <i class="fa fa-map-marker text-2xl"></i> 一键导航到西山公园
+    </a>
+</div>
+
+<!-- 更多景点 -->
+<section class="py-10 bg-white">
+    <div class="container mx-auto px-4 text-center">
+        <h3 class="text-2xl font-display font-bold text-river mb-6">更多景点推荐</h3>
+        <div class="flex gap-4 justify-center flex-wrap">
+            <a href="scenic-waterfall.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">万州大瀑布</a>
+            <a href="scenic-tiansheng.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">天生城遗址</a>
+            <a href="scenic-pinghu.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">三峡平湖</a>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-ink text-white text-center py-6">
+    <a href="../index.html" class="text-gray-400 hover:text-white">← 返回主页</a>
+    <p class="text-gray-500 text-sm mt-2">© 2025 万州旅游宣传网</p>
+</footer>
+
+<script defer src="../../assets/js/districtfx.js?v=20261019e"></script>
+</body>
+</html>

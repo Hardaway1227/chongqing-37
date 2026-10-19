@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>潭獐峡 · 畅游万州</title>
+  <link href="../fa/font-awesome.min.css" rel="stylesheet">
+  <link href="../fonts/fonts.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F5F4F0;
+      background-image:
+              url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 8px 32px rgba(10,77,139,0.06); }
+    .btn-hover { transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -8px rgba(10,77,139,0.35); }
+    .btn-hover:active { transform: scale(0.97); }
+    .decor-line { height: 3px; background: linear-gradient(90deg, #0A4D8B, #D4A853 40%, #2E7D71 70%, #D4A853); width: 90px; margin: 0 auto; border-radius: 2px; position: relative; }
+    .decor-line::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: #D4A853; border-radius: 50%; box-shadow: 0 0 8px rgba(212,168,83,0.5); }
+    .font-display { font-family: 'Ma Shan Zheng', cursive; }
+    .font-serif { font-family: 'Noto Serif SC', serif; }
+    .text-gradient { background: linear-gradient(135deg, #0A4D8B 0%, #2E7D71 60%, #D4A853 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .card-hover { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(10,77,139,0.2); }
+    .stat-card { transition: all 0.3s ease; }
+    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(10,77,139,0.12); }
+    .fixed-btn { box-shadow: 0 10px 30px rgba(10,77,139,0.35); transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .fixed-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(10,77,139,0.45); }
+  </style>
+<link rel="stylesheet" href="../tw.css">
+</head>
+<body class="font-serif text-gray-800 scroll-smooth antialiased">
+
+<header class="glass fixed w-full top-0 z-50 py-4 px-6 flex items-center justify-between">
+  <a href="../index.html" class="text-xl font-display font-bold text-river"><i class="fa fa-arrow-left mr-2"></i>万州旅游</a>
+  <a href="../index.html#scenic" class="text-golden font-bold"><i class="fa fa-th-large mr-1"></i>返回景点列表</a>
+</header>
+
+<section class="pt-20 pb-8 bg-gradient-to-b from-teal-50 to-warm">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <img src="../../assets/pic/tan2.jpg" alt="潭獐峡" class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
+    <div class="mt-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-display font-bold mb-2 text-gradient">潭獐峡</h1>
+      <p class="text-xl text-river font-semibold">国家级风景名胜区 · 七曜山深处的秘境 · 渝东小九寨</p>
+      <div class="decor-line mt-4"></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container mx-auto px-4 max-w-4xl">
+
+    <!-- 景区概述 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🏞️ 七曜山深处的原生态秘境</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        潭獐峡位于重庆市万州区东南部梨树乡与地宝乡交界处，是七曜山脉的一段石灰岩峡谷，<strong class="text-golden">国家级风景名胜区</strong>。峡谷全长约21公里，核心区域面积67平方千米，由将军峡、天王峡、桃园峡、地缝峡、海螺峡五条支峡组成，一峡五谷，姿态各异，被誉为“渝东小九寨”。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        潭獐峡之名源于峡中<strong class="text-river">水潭密布、獐子出没</strong>的自然野趣。这里地势险峻，两岸峭壁林立，最高峰太平山海拔1127米，峡谷垂直切割深度达500米以上。峡内溪流终年不断，水质清澈见底，数十个形态各异的深潭散落其间，夏季均温仅22℃，是远离城市喧嚣的避暑天堂和探险胜地。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">国家级风景名胜区</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">七曜山脉</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">渝东小九寨</span>
+      </div>
+    </div>
+
+    <!-- 关键数据 -->
+    <div class="grid md:grid-cols-4 gap-4 mb-8">
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-river">21<span class="text-lg">km</span></div>
+        <p class="text-xs text-gray-600 mt-1">峡谷总长</p>
+      </div>
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-jade">67<span class="text-lg">km²</span></div>
+        <p class="text-xs text-gray-600 mt-1">核心面积</p>
+      </div>
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-golden">5<span class="text-lg">条</span></div>
+        <p class="text-xs text-gray-600 mt-1">支峡组成</p>
+      </div>
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-coral">22<span class="text-lg">℃</span></div>
+        <p class="text-xs text-gray-600 mt-1">夏季均温</p>
+      </div>
+    </div>
+
+    <!-- 五峡详解 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">⛰️ 一峡五谷：各具风姿的五条支峡</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        潭獐峡由五条各具特色的支峡组成，分布着将军峡、天王峡、桃园峡、地缝峡、海螺峡等37处主要景点，以“麒麟峡”为核心的峡谷群呈现出一幅天然山水画卷。
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">⚔️</div>
+          <h4 class="font-bold text-ink">将军峡</h4>
+          <p class="text-xs text-gray-600">峡谷险峻雄奇，因崖壁如将军列阵而得名，是五峡中最壮阔的一段。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">👑</div>
+          <h4 class="font-bold text-ink">天王峡</h4>
+          <p class="text-xs text-gray-600">以高耸的石柱和飞瀑流泉著称，溪水蜿蜒曲折，气势磅礴。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🌸</div>
+          <h4 class="font-bold text-ink">桃园峡</h4>
+          <p class="text-xs text-gray-600">谷内植被茂密，春季野花盛开，如世外桃源般清幽宁静。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🕳️</div>
+          <h4 class="font-bold text-ink">地缝峡</h4>
+          <p class="text-xs text-gray-600">两侧绝壁夹峙，仅露一线天光，最窄处仅容一人侧身通过。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🐚</div>
+          <h4 class="font-bold text-ink">海螺峡</h4>
+          <p class="text-xs text-gray-600">谷形盘旋如海螺，潭水碧绿深邃，回声悠扬，别具趣味。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🦄</div>
+          <h4 class="font-bold text-ink">麒麟峡（核心）</h4>
+          <p class="text-xs text-gray-600">潭獐峡的核心景观段，集深潭、瀑布、绝壁于一体，是整条峡谷的灵魂所在。</p>
+        </div>
+      </div>
+      <p class="text-sm text-gray-500 text-center">五峡首尾相连，徒步全程需4-6小时，沿途潭瀑相间，步步皆景。</p>
+    </div>
+
+    <!-- 地质景观 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🪨 地质奇观：石灰岩峡谷的鬼斧神工</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        潭獐峡属典型的<strong class="text-golden">石灰岩峡谷地貌</strong>，经过亿万年流水侵蚀和地壳抬升，形成了深切的V形峡谷和众多溶蚀景观。峡内岩层裸露，石笋、石柱、溶洞等喀斯特地貌随处可见，是渝东北地区保存最完好的原生态峡谷之一。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        峡谷中段有一处名为<strong class="text-river">“千层岩”</strong>的绝壁，层层叠叠的岩层纹理清晰，如同一部打开的地质史书，诉说着数亿年的沧海桑田。游客在徒步过程中，还能看到多处天然形成的“石门”“石窗”，穿行其间宛如进入一座天然的石雕艺术馆。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">石灰岩峡谷</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">喀斯特地貌</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">千层岩</span>
+      </div>
+    </div>
+
+    <!-- 生态植被 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🌿 原始生态：珍稀动植物的家园</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        潭獐峡地处七曜山脉腹地，森林覆盖率极高，保持着近乎原始的生态环境。峡内植被茂密，生长着楠木、银杏、红豆杉等多种珍稀植物，还有獐子、野猪、猕猴、锦鸡等野生动物栖息其间。春天杜鹃盛开，秋天红叶满山，四季景色各有不同。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        最让人心旷神怡的是峡中<strong class="text-golden">数十个天然深潭</strong>，潭水清澈见底，碧绿如翡翠。夏季溯溪而上，脚踩清凉的溪水，抬头便是遮天蔽日的原始林木，空气中负氧离子含量极高，是一次彻底的身心洗礼。正因这份原始的野趣，潭獐峡被户外爱好者誉为“渝东最后的秘境”。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">原始森林</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">天然深潭</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">珍稀动植物</span>
+      </div>
+    </div>
+
+    <!-- 游览方式 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🥾 徒步溯溪：户外爱好者的天堂</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        潭獐峡是目前渝东北地区最受户外爱好者青睐的<strong class="text-golden">徒步溯溪线路</strong>之一。从峡口进入，沿溪流而上，全程约需4-6小时。途中需要多次涉水过溪，攀爬岩壁，对体力和装备有一定要求，建议结伴而行并聘请当地向导。
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">🌊 溯溪体验</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">夏季水量充沛时，是潭獐峡溯溪的最佳季节。穿着溯溪鞋，沿着清澈见底的溪流逆流而上，清凉的溪水漫过脚踝，两岸原始林木遮天蔽日，暑气全消。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">📸 摄影秘境</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">峡谷中光影变化丰富，尤其是正午时分阳光穿透峡谷缝隙形成的“耶稣光”，以及深潭倒映两岸绝壁的对称构图，是风光摄影师钟爱的创作题材。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 实用信息 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📋 游览实用信息</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-3">🕐 开放信息</h4>
+          <div class="space-y-2 text-sm text-gray-700">
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">开放时间</span><span>08:00 - 17:00</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">游览季节</span><span>春夏秋三季最佳</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">建议时长</span><span>4-6 小时（全程徒步）</span></div>
+          </div>
+        </div>
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-3">🎫 门票与交通</h4>
+          <div class="space-y-2 text-sm text-gray-700">
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">门票价格</span><span>60 元/人</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">景区地址</span><span>万州区梨树乡</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">自驾路线</span><span>万州城区出发约1.5小时</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">※ 景区处于持续优化提升阶段，部分区域可能因安全原因临时封闭，建议出行前通过官方渠道确认最新开放情况。徒步建议携带溯溪鞋、防水背包、充足饮用水，并聘请当地向导。</p>
+    </div>
+
+    <!-- 诗咏 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📝 诗咏潭獐</h2>
+      <div class="bg-warm rounded-2xl p-6 text-center">
+        <p class="text-xl italic text-gray-600 leading-relaxed">“七曜山深藏秘境，五峡连珠碧水清。<br>潭光潋滟浮云影，一入獐峡万事轻。”<br><span class="text-sm text-golden mt-2 inline-block">——题潭獐峡</span></p>
+      </div>
+      <p class="text-sm text-gray-500 mt-3 text-center">这片尚未被大规模开发的原始峡谷，正静静等待着每一位热爱自然的旅人，来此寻幽探秘、溯溪寻源。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 底部导航按钮 -->
+<div class="fixed bottom-6 left-0 right-0 flex justify-center z-50 px-4">
+  <a href="https://uri.amap.com/navigation?to=108.600,30.700,潭獐峡" target="_blank"
+     class="fixed-btn bg-river text-white px-8 py-4 rounded-full text-lg font-bold btn-hover flex items-center gap-3 shadow-2xl">
+    <i class="fa fa-map-marker text-2xl"></i> 一键导航到潭獐峡
+  </a>
+</div>
+
+<!-- 更多景点 -->
+<section class="py-10 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-2xl font-display font-bold text-river mb-6">更多景点推荐</h3>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="scenic-waterfall.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">万州大瀑布</a>
+      <a href="scenic-tiefeng.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">铁峰山公园</a>
+      <a href="scenic-pinghu.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">三峡平湖</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-white text-center py-6">
+  <a href="../index.html" class="text-gray-400 hover:text-white">← 返回主页</a>
+  <p class="text-gray-500 text-sm mt-2">© 2025 万州旅游宣传网</p>
+</footer>
+
+<script defer src="../../assets/js/districtfx.js?v=20261019e"></script>
+</body>
+</html>

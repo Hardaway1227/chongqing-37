@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万州大瀑布 · 畅游万州</title>
+  <link href="../fa/font-awesome.min.css" rel="stylesheet">
+  <link href="../fonts/fonts.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F5F4F0;
+      background-image:
+              url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 8px 32px rgba(10,77,139,0.06); }
+    .btn-hover { transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -8px rgba(10,77,139,0.35); }
+    .btn-hover:active { transform: scale(0.97); }
+    .decor-line { height: 3px; background: linear-gradient(90deg, #0A4D8B, #D4A853 40%, #2E7D71 70%, #D4A853); width: 90px; margin: 0 auto; border-radius: 2px; position: relative; }
+    .decor-line::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: #D4A853; border-radius: 50%; box-shadow: 0 0 8px rgba(212,168,83,0.5); }
+    .font-display { font-family: 'Ma Shan Zheng', cursive; }
+    .font-serif { font-family: 'Noto Serif SC', serif; }
+    .text-gradient { background: linear-gradient(135deg, #0A4D8B 0%, #2E7D71 60%, #D4A853 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .card-hover { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(10,77,139,0.2); }
+    .stat-card { transition: all 0.3s ease; }
+    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(10,77,139,0.12); }
+    .fixed-btn { box-shadow: 0 10px 30px rgba(10,77,139,0.35); transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .fixed-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(10,77,139,0.45); }
+  </style>
+<link rel="stylesheet" href="../tw.css">
+</head>
+<body class="font-serif text-gray-800 scroll-smooth antialiased">
+
+<header class="glass fixed w-full top-0 z-50 py-4 px-6 flex items-center justify-between">
+  <a href="../index.html" class="text-xl font-display font-bold text-river"><i class="fa fa-arrow-left mr-2"></i>万州旅游</a>
+  <a href="../index.html#scenic" class="text-golden font-bold"><i class="fa fa-th-large mr-1"></i>返回景点列表</a>
+</header>
+
+<section class="pt-20 pb-8 bg-gradient-to-b from-blue-50 to-warm">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <img src="../../assets/pic/pubu3.jpg" alt="万州大瀑布" class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
+    <div class="mt-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-display font-bold mb-2 text-gradient">万州大瀑布</h1>
+      <p class="text-xl text-river font-semibold">亚洲第一瀑 · 国家AAAA级景区 · 巴渝十二景 · 2.5亿年地质奇观</p>
+      <div class="decor-line mt-4"></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container mx-auto px-4 max-w-4xl">
+
+    <!-- 景区概述 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🌊 亚洲第一瀑：三峡深处的银河奇观</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州大瀑布群旅游区位于重庆市万州区甘宁镇，距城区约30公里，是<strong class="text-golden">国家AAAA级旅游景区</strong>和重庆市级风景名胜区。景区面积约60.13平方公里，核心景点万州大瀑布宽151米，高64.5米，单挂面积9739.5平方米，是迄今发现的<strong class="text-river">亚洲面积最大的单挂瀑布</strong>，被誉为“亚洲第一瀑”。2015年，万州大瀑布被列入“2015新重庆·巴渝十二景”自然景观类名单。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州大瀑布又称<strong class="text-golden">青龙瀑布、甘宁瀑布</strong>——因上游有青龙河而得名“青龙瀑布”，又因地处三国东吴大将甘宁的故里，当地人称之为“甘宁瀑布”。大瀑布群呈三级梯级瀑布群，沿青龙河由上而下至瀼渡长江口，分别有万州大瀑布、仙女滩瀑布、鲸鱼口瀑布，全长约12公里，共同构成了三峡旅游线独特的瀑布群景观。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        景区山青、水秀、瀑宽、洞奇、潭幽、湖大、虹美，共有大小景点50多个。以万州大瀑布为核心，涵盖青龙河、青龙洞、水帘洞、白鹭栖息地、黑马崖等多种自然景观，以及甘宁将军墓、甘宁将军塑像、何其芳故居、太白阁等人文景点。2012年成功申报国家4A级景区以来，景区累计投入逾2.8亿元，持续打造三峡旅游精品目的地。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">4A景区</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">巴渝十二景</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">亚洲第一瀑</span>
+      </div>
+    </div>
+
+    <!-- 关键数据 -->
+    <div class="grid md:grid-cols-4 gap-4 mb-8">
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-river">151<span class="text-lg">米</span></div>
+        <p class="text-xs text-gray-600 mt-1">瀑布宽度</p>
+      </div>
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-jade">64.5<span class="text-lg">米</span></div>
+        <p class="text-xs text-gray-600 mt-1">瀑布高度</p>
+      </div>
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-golden">9739.5<span class="text-lg">m²</span></div>
+        <p class="text-xs text-gray-600 mt-1">单挂面积</p>
+      </div>
+      <div class="glass rounded-2xl p-5 text-center stat-card">
+        <div class="text-4xl font-display font-bold text-coral">50+<span class="text-lg">个</span></div>
+        <p class="text-xs text-gray-600 mt-1">大小景点</p>
+      </div>
+    </div>
+
+    <!-- 地质成因 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🪨 地质奇观：2.5亿年的自然伟力</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州大瀑布的形成可追溯至<strong class="text-golden">中生代三迭纪和侏罗纪年代，距今约2.5亿年</strong>。景区地处新华夏系第三沉降带川东褶皱带和川鄂湘黔隆起褶皱带的组合部，地质复杂，属典型的喀斯特地貌。山体为条状单斜地形，厚层硬质砂岩发育区多陡崖峭壁，海拔在280米至670米之间。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        青龙河贯穿全境，汇集6条主要河岔和60多条溪流的丰沛水量，长年浩浩荡荡，凌空飞泻直落青龙深潭。瀑布下方有两个天然形成的巨大岩洞——水帘洞和青龙洞（又名观音古洞），面积分别为1600余平方米和7000余平方米，高50多米，洞中有清代摩崖石刻和古城墙等遗迹。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        大瀑布终年流水不断，气势磅礴，撼人心魄。由飞瀑、阳光形成的<strong class="text-river">七色彩虹</strong>横跨峡谷，千姿百态，宛若人间仙境。瀑布之下，青龙深潭碧绿如玉，水雾弥漫，晴天可见彩虹飞架，雨天则水雾与丝雨交融，别有一番朦胧之美。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">2.5亿年地质</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">喀斯特地貌</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">七色彩虹</span>
+      </div>
+    </div>
+
+    <!-- 六大特色体验 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🎯 六大特色体验：360度全景观瀑</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        万州大瀑布不仅是“大”，更有“奇”与“妙”。它是<strong class="text-golden">目前亚洲唯一可以360度全景观赏的瀑布</strong>，游客可通过多种方式与瀑布亲密接触。
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🏔️</div>
+          <h4 class="font-bold text-ink">天风栈道</h4>
+          <p class="text-xs text-gray-600">古栈道犹如游龙般蜿蜒于悬崖峭壁之间，不可不上。行走其上，飞瀑轰鸣在耳，水雾扑面而来。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">💧</div>
+          <h4 class="font-bold text-ink">观音玉露</h4>
+          <p class="text-xs text-gray-600">晴天能赏瀑间彩虹，雨中同沐瀑布水雾与缠绵丝雨，感受大自然最纯净的洗礼。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🚣</div>
+          <h4 class="font-bold text-ink">竹筏漂流</h4>
+          <p class="text-xs text-gray-600">乘坐竹筏逆流而上，在水上近距离感受瀑布的磅礴气势，体验惊险刺激的亲水之旅。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🚂</div>
+          <h4 class="font-bold text-ink">丛林飞车</h4>
+          <p class="text-xs text-gray-600">风驰电掣穿梭于山林之间，感受速度与激情的碰撞，是亲子游客的最爱。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🌉</div>
+          <h4 class="font-bold text-ink">陆安古桥</h4>
+          <p class="text-xs text-gray-600">古老沧桑的石桥横跨青龙河，是观赏瀑布全景的绝佳位置，也是拍照打卡的经典机位。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">💃</div>
+          <h4 class="font-bold text-ink">甘家秘功</h4>
+          <p class="text-xs text-gray-600">一台富于巴东文化特色的精彩表演，展现三国名将甘宁故里的武术传承与民间文化。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 水帘洞与观音古洞 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🕳️ 水帘洞与观音古洞：瀑下奇观</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-4">
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">💧 水帘洞</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">水帘洞洞阔1600平方米，深数十米。洞内观瀑，茫茫水帘，瀑雨飞舞，瀑雾弥漫，遮天蔽日，流光彩幔，辉煌夺目。游客可乘船穿越水帘，感受“飞流直下三千尺”的震撼。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">🛕 观音古洞（青龙洞）</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">青龙洞面积达7000余平方米，高50多米，洞中青山碧水，相映成趣。洞内有清代摩崖石刻和古城墙等遗迹，梵音袅袅，自然天成的“天工画壁”令人叹为观止。</p>
+        </div>
+      </div>
+      <p class="text-lg leading-relaxed text-gray-700">
+        两大天然岩洞均形成于瀑布长期冲刷侵蚀之下，是万州大瀑布区别于其他著名瀑布的独特之处。正如景区负责人所言，万州大瀑布不仅是“大”，更在于“奇”与“妙”——游客可以走入瀑布内部，从内向外仰望飞流直下的壮丽景观，这种体验在亚洲瀑布中独一无二。
+      </p>
+    </div>
+
+    <!-- 甘宁故里与三国文化 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">⚔️ 甘宁故里：名将故里的文化底蕴</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州大瀑布所在的甘宁镇，是<strong class="text-golden">三国东吴大将甘宁的故里</strong>。甘宁，字兴霸，东汉巴郡临江（今重庆万州甘宁镇）人，少年有力，读诸子，17岁左右任过蜀郡丞，后归吴见用于孙权。史书记载甘宁“破黄祖据楚关，攻曹仁取夷陵，镇益阳拒关羽，守西陵获朱光，击合肥退张辽”，战功卓著，是中国历史上一位赫赫有名的战将。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        景区内保留有<strong class="text-river">甘宁将军墓（衣冠冢）和甘宁将军塑像</strong>，供后人瞻仰。此外，甘宁镇还诞生了现代著名文学家、诗人<strong class="text-golden">何其芳</strong>，其故居亦在景区范围内。甘宁镇因此拥有了三国名将和现代诗人这“文武双星”。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        甘宁镇文化厚重，市级非物质文化遗产<strong class="text-river">“甘宁鼓乐”</strong>衍生于此。当地流传着众多与甘宁将军相关的民间传说故事，这些故事有人物、有事件、有情节，为万州大瀑布观光的游客提供了丰富的文化大餐。游客在饱览自然风光之余，也能感受到甘宁镇作为“文藻胜地”的深厚人文底蕴。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">三国名将故里</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">何其芳故居</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">甘宁鼓乐</span>
+      </div>
+    </div>
+
+    <!-- 名人足迹 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📝 名人足迹：文脉悠长的诗画长廊</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州大瀑布不仅以自然奇观著称，更以深厚的人文积淀闻名。据万州区文化和旅游发展委员会记载，唐代诗仙<strong class="text-golden">李白</strong>、诗圣<strong class="text-golden">杜甫</strong>、诗王<strong class="text-golden">白居易</strong>，宋代书法家<strong class="text-river">苏轼、黄庭坚、米芾</strong>，明代才子<strong class="text-river">唐寅（唐伯虎）、文徵明</strong>，以及《西游记》作者<strong class="text-river">吴承恩</strong>，都曾在此留下足迹与故事。此外，道隆法师、破山禅师等高僧也曾在此参禅修行。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        景区内的<strong class="text-golden">太白阁、醉吟廊、涪翁亭、陶然长廊</strong>等建筑，便是为纪念这些文化名人而建。漫步其间，仿佛穿越千年，与古人在瀑布轰鸣声中对话。这些深厚的人文积淀，使万州大瀑布不仅是一处自然奇观，更是一座承载巴渝文脉的诗画长廊。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">李白杜甫白居易</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">苏轼黄庭坚</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm font-bold">唐寅吴承恩</span>
+      </div>
+    </div>
+
+    <!-- 五大景区 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🏞️ 五大景区 · 39个景点</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        万州大瀑布群旅游区由<strong class="text-golden">青龙瀑布、甘宁湖、白云洞、贯峰书院和逍遥庄</strong>5大景区39个景点组成，集山、水、瀑、洞、潭、湖、林于一体，是三峡旅游线上不可错过的综合性自然风景区。
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🌊</div>
+          <h4 class="font-bold text-ink">青龙瀑布</h4>
+          <p class="text-xs text-gray-600">核心景区，万州大瀑布所在地，含水帘洞、观音古洞、天风栈道等核心景点。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🚣</div>
+          <h4 class="font-bold text-ink">甘宁湖</h4>
+          <p class="text-xs text-gray-600">瀑布上游的宽阔湖面，碧波荡漾，可泛舟游览，感受山水相依的静谧之美。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🕳️</div>
+          <h4 class="font-bold text-ink">白云洞</h4>
+          <p class="text-xs text-gray-600">天然溶洞景观，洞内钟乳石千姿百态，与瀑布形成的地表景观相互呼应。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">📚</div>
+          <h4 class="font-bold text-ink">贯峰书院</h4>
+          <p class="text-xs text-gray-600">历史悠久的书院遗址，承载着甘宁镇崇文重教的文化传统。</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-4 text-center card-hover">
+          <div class="text-3xl mb-2">🌸</div>
+          <h4 class="font-bold text-ink">逍遥庄</h4>
+          <p class="text-xs text-gray-600">集休闲度假于一体的综合服务区，提供餐饮、住宿等配套服务。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 游览路线推荐 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🗺️ 推荐游览路线</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        景区建议游览时间为<strong class="text-golden">2-3小时</strong>，以下为最优游览路径：
+      </p>
+      <div class="bg-warm rounded-2xl p-5 mb-4">
+        <p class="text-gray-700 text-sm leading-relaxed">
+          <strong class="text-river">入口</strong> → 开瑞轩 → 陶然长廊 → 丛林飞车售票处 → 青青世界 → 无名廊 → 神秘石刻 → <strong class="text-golden">陆安古桥</strong> → 过跳石 → <strong class="text-golden">观瀑台</strong> → 达摩古洞 → 过跳石返回 → <strong class="text-river">甘宁广场</strong>（甘宁墓）→ 冰雪奇缘 → 太白阁 → 云水天 → <strong class="text-golden">水帘洞</strong> → <strong class="text-river">出口</strong>
+        </p>
+      </div>
+      <p class="text-lg leading-relaxed text-gray-700">
+        沿着这条线路，您将依次领略陆安古桥的历史沧桑、观瀑台上瀑布全景的震撼、甘宁广场的三国文化、水帘洞中穿越瀑布的奇妙体验。天风栈道蜿蜒于悬崖峭壁之间，是途中不可错过的惊险路段。
+      </p>
+    </div>
+
+    <!-- 游览实用信息 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📋 游览实用信息</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-3">🕐 开放信息</h4>
+          <div class="space-y-2 text-sm text-gray-700">
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">景区类型</span><span>国家4A级旅游景区</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">开放时间</span><span>全年 09:00 — 16:00</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">最晚入园</span><span>16:00</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">建议时长</span><span>2 — 3小时</span></div>
+          </div>
+        </div>
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-3">🎫 门票与交通</h4>
+          <div class="space-y-2 text-sm text-gray-700">
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">成人票</span><span>98元/人</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">优待票</span><span>49元/人（学生/儿童/老人）</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">景区地址</span><span>万州区甘宁镇甘宁河段</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-24">距城区</span><span>约30公里，车程约40分钟</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-warm rounded-2xl p-4 mt-4">
+        <h4 class="text-lg font-bold text-ink mb-2">🚗 交通指南</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">自驾：下渝宜高速后可随武陵、忠县、龙沙、响水、郭村、甘宁等线路公交车在甘宁丝厂处下万忠路（有景区路标），车程两分钟可到景区。公交：可在万州市中心乘坐公交车（武陵、忠县、龙沙、响水、郭村、甘宁方向）到景区，公交车途经景区。</p>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">※ 以上票价及时间供参考，具体以景区实际公告为准。2025年11月25日至2026年4月30日期间，万州大瀑布群对全国公安民警免门票。咨询电话：023-58234555。</p>
+    </div>
+
+    <!-- 诗咏大瀑布 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📝 诗咏大瀑布</h2>
+      <div class="bg-warm rounded-2xl p-6 text-center">
+        <p class="text-xl italic text-gray-600 leading-relaxed">“青龙出峡势如虹，万斛珠玑泻碧空。<br>水雾迷蒙遮日月，银河倒挂入潭中。”<br><span class="text-sm text-golden mt-2 inline-block">——题万州大瀑布</span></p>
+      </div>
+      <p class="text-sm text-gray-500 mt-3 text-center">从2.5亿年前的地质变迁，到三国名将甘宁的故里传奇，从唐宋名家的足迹留痕，到今日“亚洲第一瀑”的壮美风姿——万州大瀑布以它惊天地、泣鬼神的磅礴气势，等待着每一位热爱自然的旅人前来探访。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 底部导航按钮 -->
+<div class="fixed bottom-6 left-0 right-0 flex justify-center z-50 px-4">
+  <a href="https://uri.amap.com/navigation?to=108.345,30.876,万州大瀑布" target="_blank"
+     class="fixed-btn bg-river text-white px-8 py-4 rounded-full text-lg font-bold btn-hover flex items-center gap-3 shadow-2xl">
+    <i class="fa fa-map-marker text-2xl"></i> 一键导航到万州大瀑布
+  </a>
+</div>
+
+<!-- 更多景点 -->
+<section class="py-10 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-2xl font-display font-bold text-river mb-6">更多景点推荐</h3>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="scenic-tiansheng.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">天生城遗址</a>
+      <a href="scenic-pinghu.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">三峡平湖</a>
+      <a href="scenic-xishan.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">西山公园</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-white text-center py-6">
+  <a href="../index.html" class="text-gray-400 hover:text-white">← 返回主页</a>
+  <p class="text-gray-500 text-sm mt-2">© 2025 万州旅游宣传网</p>
+</footer>
+
+<script defer src="../../assets/js/districtfx.js?v=20261019e"></script>
+</body>
+</html>

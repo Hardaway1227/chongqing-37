@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>潼南蔬菜 · 潼南区 · 山城重庆</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../wanzhou/fonts/fonts.css">
+<style>
+:root{--bg:#0a0d12;--card:rgba(255,255,255,.045);--card2:rgba(255,255,255,.07);--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.17);
+--ink:#eaf0f8;--ink2:#aeb9c9;--dim:#7d8798;--ac:#FFD60A;--ac2:#FFEF9E;--fd:"Ma Shan Zheng","STKaiti","KaiTi",cursive;--serif:"Noto Serif SC",serif;--sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(900px 480px at 85% -6%,#FFD60A22,transparent 60%)}
+.wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 24px}
+.glass{background:var(--card);backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.38)}
+.topbar{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--ac,#FF9F1C) 7%, rgba(10,13,18,.86));border-bottom:1px solid color-mix(in srgb,var(--ac,#FF9F1C) 30%, transparent)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--fd);font-size:22px;color:var(--ac);text-decoration:none;letter-spacing:.05em}
+.topbar nav a{color:var(--ink2);text-decoration:none;font-size:14px;margin-left:16px;transition:.2s}
+.topbar nav a:hover{color:var(--ac)}
+.hero{position:relative;height:min(52vh,430px);min-height:300px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;transform:scale(1.03)}
+.hero .mask{position:absolute;inset:0;background:linear-gradient(180deg,#FFD60A22 0%,rgba(10,13,18,.30) 40%,var(--bg) 100%)}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;max-width:1000px;margin:0 auto;padding:0 24px 34px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.26em;color:var(--ac);border:1px solid #FFD60A66;padding:4px 14px;border-radius:99px;margin-bottom:12px;background:rgba(10,13,18,.4)}
+.hero h1{font-family:var(--fd);font-size:clamp(38px,6vw,62px);font-weight:400;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.6)}
+.sec{padding:0;border-top:0;margin-top:56px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.sec-head .idx{font-family:var(--fd);font-size:24px;color:var(--ac)}
+.sec-head h2{font-size:clamp(21px,3vw,28px);font-weight:800;background:linear-gradient(120deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+.prose{max-width:40em}
+.prose p{color:var(--ink2);font-size:15.5px;line-height:2;margin-bottom:14px}
+.prose b{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{padding:20px;border-radius:16px}
+.stat b{display:block;font-size:12px;color:var(--dim);font-weight:500;letter-spacing:.08em;margin-bottom:6px}
+.stat span{font-size:16.5px;font-weight:700;color:var(--ink)}
+.tipbox{background:linear-gradient(160deg,#FFD60A1c,transparent 72%);border:1px solid #FFD60A44;border-radius:16px;padding:22px 26px}
+.tipbox b{color:var(--ac);display:block;margin-bottom:6px;letter-spacing:.1em;font-size:13px}
+.tipbox p{color:var(--ink2);font-size:14.5px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.rcard{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s;position:relative}
+.rcard:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(0,0,0,.5);border-color:var(--line2)}
+.rcard .ph{height:130px;background:linear-gradient(140deg,#1a2330,#0f141c)}.rcard .ph img{width:100%;height:100%;object-fit:cover}
+.rcard .tx{padding:14px 16px}.rcard h4{font-size:15px;margin-bottom:4px}.rcard p{color:var(--ink2);font-size:12.5px;line-height:1.6}
+.pager{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pg{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;transition:.3s;display:flex;flex-direction:column;gap:4px}
+.pg:hover{border-color:var(--ac);transform:translateY(-3px)}
+.pg .dir{font-size:11px;letter-spacing:.2em;color:var(--dim)}.pg .nm{font-family:var(--fd);font-size:21px;color:var(--ac)}
+.pg.next{text-align:right;align-items:flex-end}
+.foot{margin-top:56px;padding:40px 0 48px;border-top:1px solid var(--line);text-align:center}
+.foot .seal{font-family:var(--fd);font-size:60px;line-height:1;color:var(--ac);opacity:.12;user-select:none}
+.foot p{color:var(--dim);font-size:13px;margin-top:6px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.scard{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:var(--card);transition:.3s;position:relative}
+.scard:hover{transform:translateY(-4px);border-color:var(--ac);box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.scard .ph{display:block;height:104px;background:linear-gradient(140deg,#1a2330,#0f141c)}
+.scard .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.scard b{display:block;font-size:13.5px;padding:9px 11px 2px}
+.scard em{display:block;font-style:normal;font-size:11px;color:var(--dim);padding:0 11px 11px}
+.scard.cur{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac) inset}
+.scard.cur b::after{content:" · 当前";color:var(--ac);font-weight:400;font-size:11px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.fcard{display:grid;grid-template-columns:56px minmax(0,1fr);grid-auto-rows:min-content;gap:2px 11px;align-items:center;
+  text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:13px;
+  background:var(--card);padding:10px;transition:.28s}
+.fcard:hover{border-color:var(--line2);transform:translateY(-3px)}
+.fcard .ph{grid-row:1 / span 2;width:56px;height:56px;border-radius:9px;overflow:hidden;background:#151c26}
+.fcard .ph img{width:100%;height:100%;object-fit:cover}
+.fcard b{display:block;font-size:13.5px;line-height:1.4}
+.fcard em{display:block;font-style:normal;font-size:11.5px;color:var(--dim);line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.golist{border-radius:16px;padding:18px 20px}
+.gorow{display:flex;gap:16px;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.07);font-size:13.5px}
+.gorow:last-of-type{border:0}
+.gorow b{color:var(--dim);font-weight:500;flex:none}
+.gorow span{color:var(--ink2);text-align:right}
+.gorow a{color:var(--ac);text-decoration:none}
+.gorow a:hover{text-decoration:underline}
+.gonote{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--dim)}
+.side-toc{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:20;width:196px;display:none;padding:14px 12px 12px;border-radius:14px;background:rgba(8,11,16,.62);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+@media(min-width:1380px){.side-toc{display:block}}
+.side-toc .st-h{font-size:10px;letter-spacing:.2em;color:var(--dim);padding:0 10px 8px}
+.side-toc a{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;
+  color:var(--ink2);text-decoration:none;font-size:12.5px;line-height:1.4;
+  border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.side-toc a::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--line2);flex:none;transition:background .2s,box-shadow .2s}
+.side-toc a:hover{background:var(--card);color:var(--ink)}
+.side-toc a.on{background:var(--card);border-color:var(--line);color:var(--ac)}
+.side-toc a.on::before{background:var(--ac);box-shadow:0 0 8px #FFD60A99}
+.side-toc .st-back{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--dim)}
+.side-toc .st-back::before{display:none}
+.side-toc .st-back:hover{color:var(--ac)}
+.backtop{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,var(--ac),var(--ac2));box-shadow:0 10px 28px #FFD60A55;text-decoration:none;font-size:18px;opacity:0;pointer-events:none;transition:.3s;z-index:50}
+.backtop.show{opacity:1;pointer-events:auto}
+@media(max-width:720px){.stats{grid-template-columns:1fr}.pager{grid-template-columns:1fr}.pg.next{text-align:left;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="bgdeco" data-t="terrace" aria-hidden="true"><div class="pat"></div><svg class="motif" viewBox="0 0 1440 160" preserveAspectRatio="none"><path d="M0 160 0 116 130 96 260 116 400 88 540 112 690 84 840 110 990 90 1140 114 1290 92 1440 110 1440 160Z"/></svg></div>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="../tongnan.html">‹ 潼南区</a>
+  <nav><a href="../tongnan.html">区县主页</a><a href="../../index.html">重庆总览</a></nav>
+</div></header>
+
+<section class="hero">
+  <img src="../../assets/pic/tongnan/f3.jpg" alt="潼南蔬菜">
+  <div class="mask"></div>
+  <div class="cap"><span class="tag">美食 · 潼南区</span><h1>潼南蔬菜</h1></div>
+</section>
+
+<div class="wrap">
+  <section class="sec" id="ov">
+    <div class="sec-head"><span class="idx">壹</span><h2>概览</h2><span class="line"></span></div>
+    <div class="prose"><p><b>潼南蔬菜</b>——涪江流域的蔬菜基地，供应主城</p><p>三万亩油菜花一开，整个坝子变成金黄的海。</p></div>
+  </section>
+
+  <section class="sec" id="info">
+    <div class="sec-head"><span class="idx">贰</span><h2>实用信息</h2><span class="line"></span></div>
+    <div class="stats">
+      <div class="stat glass"><b>所属区县</b><span>潼南区</span></div>
+      <div class="stat glass"><b>类别</b><span>美食</span></div>
+      <div class="stat glass"><b>建议玩法</b><span style="font-size:14.5px">就地吃一顿 · 老店优先 · 别错过早市</span></div>
+    </div>
+    <div class="tipbox" style="margin-top:22px"><b>潼南区旅行贴士</b><p>油菜花 3 月最盛，大佛寺在城区边上顺路看。</p></div>
+  </section>
+
+  <section class="sec" id="near"><div class="sec-head"><span class="idx">叁</span><h2>同区更多</h2><span class="line"></span></div><div class="grid3"><a class="rcard" href="tongnan-s1.html"><div class="ph"><img src="../../assets/pic/tongnan/s1.jpg" alt="油菜花海" loading="lazy"></div><div class="tx"><h4>油菜花海</h4><p>三万亩连片油菜，三月整个坝子金黄</p></div></a><a class="rcard" href="tongnan-s2.html"><div class="ph"><img src="../../assets/pic/tongnan/s2.jpg" alt="双江古镇" loading="lazy"></div><div class="tx"><h4>双江古镇</h4><p>清代民居群，杨氏民宅和禹王宫</p></div></a><a class="rcard" href="tongnan-s3.html"><div class="ph"><img src="../../assets/pic/tongnan/s3.jpg" alt="青云湖" loading="lazy"></div><div class="tx"><h4>青云湖</h4><p>水库和湖区，垂钓休闲</p></div></a></div></section>
+
+  
+  <section class="sec" id="spots">
+    <div class="sec-head"><span class="idx">肆</span><h2>本区看点</h2><span class="line"></span></div>
+    <div class="sgrid"><a class="scard" href="tongnan-s1.html"><span class="ph"><img src="../../assets/pic/tongnan/s1.jpg" alt="油菜花海" loading="lazy"></span><b>油菜花海</b><em>自然奇观</em></a><a class="scard" href="tongnan-s2.html"><span class="ph"><img src="../../assets/pic/tongnan/s2.jpg" alt="双江古镇" loading="lazy"></span><b>双江古镇</b><em>古镇乡愁</em></a><a class="scard" href="tongnan-s3.html"><span class="ph"><img src="../../assets/pic/tongnan/s3.jpg" alt="青云湖" loading="lazy"></span><b>青云湖</b><em>自然奇观</em></a><a class="scard" href="tongnan-s4.html"><span class="ph"><img src="../../assets/pic/tongnan/s4.jpg" alt="桂林蔬菜基地" loading="lazy"></span><b>桂林蔬菜基地</b><em>自然奇观</em></a></div>
+  </section>
+  <section class="sec" id="flavor">
+    <div class="sec-head"><span class="idx">伍</span><h2>同区风物</h2><span class="line"></span></div>
+    <div class="fgrid"><a class="fcard" href="tongnan-f1.html"><span class="ph"><img src="../../assets/pic/tongnan/f1.jpg" alt="潼南柠檬" loading="lazy"></span><b>潼南柠檬</b><em>地理标志产品，全国主产区之一</em></a><a class="fcard" href="tongnan-f2.html"><span class="ph"><img src="../../assets/pic/tongnan/f2.jpg" alt="太安鱼" loading="lazy"></span><b>太安鱼</b><em>太安镇的麻辣鱼，鱼肉嫩</em></a><a class="fcard" href="tongnan-f3.html"><span class="ph"><img src="../../assets/pic/tongnan/f3.jpg" alt="潼南蔬菜" loading="lazy"></span><b>潼南蔬菜</b><em>涪江流域的蔬菜基地，供应主城</em></a><a class="fcard" href="tongnan-c1.html"><span class="ph"></span><b>大佛寺</b><em>唐代摩崖大佛，高 18.43 米，金身辉煌</em></a><a class="fcard" href="tongnan-c2.html"><span class="ph"></span><b>杨尚昆故居</b><em>革命家的旧居，四知堂</em></a><a class="fcard" href="tongnan-c3.html"><span class="ph"></span><b>卧佛寺</b><em>卧佛摩崖造像，长约 36 米</em></a></div>
+  </section>
+  <section class="sec" id="go">
+    <div class="sec-head"><span class="idx">陆</span><h2>怎么去</h2><span class="line"></span></div>
+    <div class="golist glass"><div class="gorow"><b>到主城（渝中）</b><span>约 129 km · 车程约 2 小时29 分</span></div><div class="gorow"><b>所属片区</b><span>新区</span></div><div class="gorow"><b>最近的三个区县</b><span><a href="../tongliang.html">铜梁区 57 km</a> · <a href="../hechuan.html">合川区 61 km</a> · <a href="../dazu.html">大足区 74 km</a></span></div><div class="gonote">距离按直线 ×1.32 折算、均速 52 km/h 估算，实际以导航为准。</div></div>
+  </section>
+
+  <nav class="pager"><a class="pg prev" href="tongnan-f2.html"><span class="dir">上一处</span><span class="nm">太安鱼</span></a><a class="pg next" href="tongnan-c1.html"><span class="dir">下一处</span><span class="nm">大佛寺</span></a></nav>
+
+  <footer class="foot">
+    <div class="seal">潼南区</div>
+    <p>潼南区 · 山城重庆 —— 一城山水，一区一性格</p>
+  </footer>
+</div>
+<script defer src="../../assets/js/districtfx.js?v=20261019a"></script>
+<script defer src="../../assets/js/pagefx.js?v=20261019k"></script>
+<aside class="side-toc" aria-label="本页导航">
+  <div class="st-h">本页</div>
+  <a href="#ov" data-i="0">概览</a>
+  <a href="#info" data-i="1">实用信息</a>
+  <a href="#near" data-i="2">同区更多</a>
+  <a href="#spots" data-i="3">本区看点</a>
+  <a href="#flavor" data-i="4">同区风物</a>
+  <a href="#go" data-i="5">怎么去</a>
+  <a class="st-back" href="../tongnan.html">← 返回 潼南区</a>
+</aside>
+<script>
+(function(){
+  var toc=document.querySelector('.side-toc'); if(!toc) return;
+  var secs=[].slice.call(document.querySelectorAll('.sec'));
+  toc.querySelectorAll('a[data-i]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var s=secs[+a.dataset.i]; if(s) s.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  function spy(){
+    var line=innerHeight*0.35, best=0;
+    for(var i=0;i<secs.length;i++){ if(secs[i].getBoundingClientRect().top<line) best=i; }
+    toc.querySelectorAll('a[data-i]').forEach(function(a){
+      a.classList.toggle('on', +a.dataset.i===best);
+    });
+  }
+  addEventListener('scroll',spy,{passive:true});
+  addEventListener('resize',spy);
+  spy();
+})();
+</script>
+<a href="#" class="backtop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
+<script>
+var bt=document.querySelector('.backtop');
+window.addEventListener('scroll',function(){bt.classList.toggle('show',window.scrollY>400);},{passive:true});
+</script>
+</body>
+</html>

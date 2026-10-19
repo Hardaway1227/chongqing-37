@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万州烤鱼 · 美食详情</title>
+  <link href="../fa/font-awesome.min.css" rel="stylesheet">
+  <link href="../fonts/fonts.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F5F4F0;
+      background-image:
+              url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 8px 32px rgba(10,77,139,0.06); }
+    .btn-hover { transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -8px rgba(10,77,139,0.35); }
+    .btn-hover:active { transform: scale(0.97); }
+    .decor-line { height: 3px; background: linear-gradient(90deg, #0A4D8B, #D4A853 40%, #2E7D71 70%, #D4A853); width: 90px; margin: 0 auto; border-radius: 2px; position: relative; }
+    .decor-line::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: #D4A853; border-radius: 50%; box-shadow: 0 0 8px rgba(212,168,83,0.5); }
+    .fixed-btn { box-shadow: 0 10px 30px rgba(10,77,139,0.35); transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .fixed-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(10,77,139,0.45); }
+    .font-display { font-family: 'Ma Shan Zheng', cursive; }
+    .font-serif { font-family: 'Noto Serif SC', serif; }
+    .text-gradient { background: linear-gradient(135deg, #0A4D8B 0%, #2E7D71 60%, #D4A853 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .card-hover { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(10,77,139,0.2); }
+    .badge-breath { animation: badgePulse 3s ease-in-out infinite; }
+    @keyframes badgePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); } 50% { box-shadow: 0 0 0 8px rgba(239,68,68,0); } }
+  </style>
+<link rel="stylesheet" href="../tw.css">
+</head>
+<body class="font-serif text-gray-800 scroll-smooth antialiased">
+
+<!-- 顶栏 -->
+<header class="glass fixed w-full top-0 z-50 py-4 px-6 flex items-center justify-between">
+  <a href="../index.html" class="text-xl font-display font-bold text-river"><i class="fa fa-arrow-left mr-2"></i>万州旅游</a>
+  <a href="../index.html#food" class="text-golden font-bold"><i class="fa fa-cutlery mr-1"></i>返回美食列表</a>
+</header>
+
+<!-- 主图 -->
+<section class="pt-20 pb-8 bg-gradient-to-b from-orange-50 to-warm">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <img src="../../assets/pic/kao2.jpg" alt="万州烤鱼" class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
+    <div class="mt-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-display font-bold mb-2 text-gradient">万州烤鱼</h1>
+      <p class="text-xl text-river font-semibold">国家级非物质文化遗产 · 三峡美食代表 · 中国烤鱼之乡名片</p>
+      <div class="decor-line mt-4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 正文区域 -->
+<section class="py-10">
+  <div class="container mx-auto px-4 max-w-4xl">
+
+    <!-- 什么是万州烤鱼 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🐟 什么是万州烤鱼？</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州烤鱼是重庆市万州区的传统名菜，属于渝派川菜，<strong class="text-golden">2019年被列入国家级非物质文化遗产名录</strong>。它采用“先烤后炖”的独特烹饪工艺，将鲜鱼烤至外焦里嫩，再放入特制烤盘，加入秘制调料和丰富配菜炖煮，使鱼肉充分吸收汤汁的麻辣鲜香，是万州最响亮的饮食名片。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        万州烤鱼将腌、烤、炖三种烹饪方法有机结合，借鉴了传统渝菜和重庆火锅的特点，口味奇绝、营养丰富。鱼肉鲜嫩，配菜入味，麻辣鲜香四溢，令人回味无穷。如今，万州烤鱼已从地方小吃走向全国乃至世界，成为三峡美食文化的代表。
+      </p>
+      <div class="flex gap-3 mt-4">
+        <span class="bg-red-100 text-red-700 px-4 py-1.5 rounded-full text-sm font-bold badge-breath">非遗美食</span>
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm font-bold">先烤后炖</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm font-bold">中国烤鱼之乡</span>
+      </div>
+    </div>
+
+    <!-- 烤鱼口味 -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="glass rounded-3xl p-6 shadow-lg card-hover text-center">
+        <div class="text-5xl mb-3">🌶️</div>
+        <h3 class="text-xl font-display font-bold text-river mb-2">麻辣味</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-2">最经典的万州烤鱼风味，红油翻滚，花椒与辣椒完美融合，麻得痛快、辣得过瘾，是重口味爱好者的首选。</p>
+        <span class="inline-block bg-red-100 text-red-700 px-4 py-1.5 rounded-full text-sm font-bold">人气首选</span>
+      </div>
+      <div class="glass rounded-3xl p-6 shadow-lg card-hover text-center">
+        <div class="text-5xl mb-3">🧄</div>
+        <h3 class="text-xl font-display font-bold text-river mb-2">泡椒味</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-2">酸辣鲜香的泡椒与鱼肉完美结合，口感酸爽开胃，辣而不燥，适合喜欢酸辣风味的食客。</p>
+        <span class="inline-block bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-bold">酸辣开胃</span>
+      </div>
+      <div class="glass rounded-3xl p-6 shadow-lg card-hover text-center">
+        <div class="text-5xl mb-3">🧅</div>
+        <h3 class="text-xl font-display font-bold text-river mb-2">豆豉味</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-2">豆豉的浓香与鱼肉的鲜美相互交融，咸鲜适口，酱香浓郁，是不嗜辣食客的绝佳选择。</p>
+        <span class="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-bold">酱香浓郁</span>
+      </div>
+    </div>
+
+    <!-- 历史起源 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📜 历史起源</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州烤鱼的历史可追溯至南宋时期。《万州志》记载，南宋景炎二年（1277年），元军攻入万州，守将上官夔战死。当地百姓为躲避战乱，躲入深山，缺少炊具，便用炭火将鱼烤熟，再用山泉水加野菜炖煮，竟然格外鲜美。这种“先烤后炖”的烹饪方法从此在万州民间流传开来。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        另一种更广为流传的说法与三国文化有关。相传蜀汉时期，诸葛亮在长江三峡地区屯兵时，士兵偶然将鱼烤焦了，舍不得扔掉，便加入水和辣椒继续煮，没想到味道极佳。此后这种做法在三峡地区流传，经过千年演变，形成了今天的万州烤鱼。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        晚清时期，万州韩氏在长江边开设“韩记烤鱼铺”，将烤鱼技艺发扬光大。20世纪90年代，万州心连心广场逐渐形成了烤鱼一条街，成为万州烤鱼走向全国的起点。2018年，万州区被中国烹饪协会授予<strong class="text-golden">“中国烤鱼之乡”</strong>称号。
+      </p>
+      <div class="mt-4 flex gap-3">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm">南宋起源</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm">三国传说</span>
+        <span class="bg-coral/10 text-coral px-4 py-1.5 rounded-full text-sm">中国烤鱼之乡</span>
+      </div>
+    </div>
+
+    <!-- 制作工艺 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🔥 制作工艺</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-lg leading-relaxed text-gray-700 mb-3">
+            万州烤鱼的制作分为<strong class="text-golden">三大步骤：腌、烤、炖</strong>。首先选用2-3斤的鲜活鱼（草鱼、鲢鱼、江团为佳），去鳞去内脏后，在鱼身两侧划上刀口，用料酒、姜片、葱段、盐等腌制15-20分钟去腥入味。
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700 mb-3">
+            腌制好的鱼用炭火或烤箱烤制，期间不断刷上香油和调料，烤至两面金黄、外焦里嫩。炭火的烟火气赋予了烤鱼独特的风味，这也是万州烤鱼的精髓所在。
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700">
+            烤好的鱼放入特制的铁质烤盘，浇上由辣椒、花椒、豆瓣酱、泡椒、蒜末等熬制的秘制红油汤汁，再铺上土豆片、藕片、豆皮、金针菇、洋葱等丰富配菜，放在小火上慢慢炖煮，让鱼肉和配菜充分吸收汤汁的精华。
+          </p>
+        </div>
+        <div class="bg-warm rounded-2xl p-5 flex flex-col justify-center">
+          <div class="space-y-3 text-sm text-gray-700">
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">主料</span><span>草鱼 / 鲢鱼 / 江团</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">核心工艺</span><span>先腌 → 再烤 → 后炖</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">关键调料</span><span>豆瓣酱 / 辣椒 / 花椒 / 泡椒</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">常用配菜</span><span>土豆 / 藕片 / 豆皮 / 洋葱 / 金针菇</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">烹饪火候</span><span>炭火烤制 + 小火慢炖</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">口味类型</span><span>麻辣 / 泡椒 / 豆豉 / 蒜香 / 酸菜</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 推荐店铺 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📍 推荐店铺</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">心连心广场烤鱼街</h4>
+          <p class="text-gray-600 text-sm leading-relaxed mb-2">万州最著名的烤鱼聚集地，整条街汇集了数十家老字号烤鱼店，是万州烤鱼走向全国的起点。夜晚灯火通明，烟火气十足，人均消费约60元。</p>
+          <p class="text-gray-500 text-xs"><i class="fa fa-map-marker text-river mr-1"></i>万州区心连心广场</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">独一处烤鱼（万州总店）</h4>
+          <p class="text-gray-600 text-sm leading-relaxed mb-2">万州老字号烤鱼品牌，以传统炭火烤制闻名，鱼肉外焦里嫩，汤汁浓郁，配菜丰富，是本地人极力推荐的烤鱼名店。</p>
+          <p class="text-gray-500 text-xs"><i class="fa fa-map-marker text-river mr-1"></i>万州区太白路附近</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 地道吃法 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🍽️ 地道吃法</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        吃万州烤鱼讲究<strong class="text-golden">“先吃肉、后涮菜、最后下面”</strong>。烤鱼端上桌后，先夹一块外焦里嫩的鱼肉，在红油汤汁中涮一下，麻辣鲜香瞬间在口中绽放。鱼肉吃得差不多了，烤盘下的火继续炖着，配菜在汤汁中翻滚，土豆软糯、藕片脆爽、豆皮吸满汤汁，每一口都入味十足。
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        最地道的吃法是<strong class="text-river">配上一碗白米饭</strong>，或者像重庆火锅那样涮一些青菜、面条，让浓郁的汤汁充分发挥最后的价值。万州人吃烤鱼，讲究的是热闹和氛围，三五好友围坐一桌，一锅烤鱼，几瓶啤酒，烟火气与人情味交织，这才是万州烤鱼的精髓所在。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 底部导航按钮 -->
+<div class="fixed bottom-6 left-0 right-0 flex justify-center z-50 px-4">
+  <a href="https://uri.amap.com/search?keyword=万州心连心广场烤鱼街" target="_blank"
+     class="fixed-btn bg-river text-white px-8 py-4 rounded-full text-lg font-bold btn-hover flex items-center gap-3 shadow-2xl">
+    <i class="fa fa-map-marker text-2xl"></i> 一键导航到烤鱼街
+  </a>
+</div>
+
+<!-- 更多美食 -->
+<section class="py-10 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-2xl font-display font-bold text-river mb-6">更多万州美味</h3>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="food-noodles.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">万州杂酱面</a>
+      <a href="food-gege.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">万州格格</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-white text-center py-6">
+  <a href="../index.html" class="text-gray-400 hover:text-white">← 返回主页</a>
+  <p class="text-gray-500 text-sm mt-2">© 2025 万州旅游宣传网</p>
+</footer>
+
+<script defer src="../../assets/js/districtfx.js?v=20261019e"></script>
+</body>
+</html>

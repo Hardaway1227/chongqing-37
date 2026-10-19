@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万州格格 · 美食详情</title>
+  <link href="../fa/font-awesome.min.css" rel="stylesheet">
+  <link href="../fonts/fonts.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F5F4F0;
+      background-image:
+              url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 8px 32px rgba(10,77,139,0.06); }
+    .btn-hover { transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 18px 30px -8px rgba(10,77,139,0.35); }
+    .btn-hover:active { transform: scale(0.97); }
+    .decor-line { height: 3px; background: linear-gradient(90deg, #0A4D8B, #D4A853 40%, #2E7D71 70%, #D4A853); width: 90px; margin: 0 auto; border-radius: 2px; position: relative; }
+    .decor-line::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: #D4A853; border-radius: 50%; box-shadow: 0 0 8px rgba(212,168,83,0.5); }
+    .fixed-btn { box-shadow: 0 10px 30px rgba(10,77,139,0.35); transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1); }
+    .fixed-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(10,77,139,0.45); }
+    .font-display { font-family: 'Ma Shan Zheng', cursive; }
+    .font-serif { font-family: 'Noto Serif SC', serif; }
+    .text-gradient { background: linear-gradient(135deg, #0A4D8B 0%, #2E7D71 60%, #D4A853 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .card-hover { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(10,77,139,0.2); }
+  </style>
+<link rel="stylesheet" href="../tw.css">
+</head>
+<body class="font-serif text-gray-800 scroll-smooth antialiased">
+
+<!-- 顶栏 -->
+<header class="glass fixed w-full top-0 z-50 py-4 px-6 flex items-center justify-between">
+  <a href="../index.html" class="text-xl font-display font-bold text-river"><i class="fa fa-arrow-left mr-2"></i>万州旅游</a>
+  <a href="../index.html#food" class="text-golden font-bold"><i class="fa fa-cutlery mr-1"></i>返回美食列表</a>
+</header>
+
+<!-- 主图 -->
+<section class="pt-20 pb-8 bg-gradient-to-b from-red-50 to-warm">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <img src="../../assets/pic/gege2.jpg" alt="万州格格" class="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
+    <div class="mt-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-display font-bold mb-2 text-gradient">万州格格</h1>
+      <p class="text-xl text-river font-semibold">竹笼粉蒸 · 市井经典 · 万州美食三绝之一</p>
+      <div class="decor-line mt-4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 正文区域 -->
+<section class="py-10">
+  <div class="container mx-auto px-4 max-w-4xl">
+
+    <!-- 什么是格格 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📖 什么是格格？</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        万州格格是重庆市万州区的传统特色小吃，属川菜渝派下河帮菜，与万州烤鱼、万州杂酱面并称<strong class="text-golden">"万州美食三绝"</strong>，已入选首批"重庆地标菜"名单。<strong class="text-river">"格格"是万县俗语，意为蒸笼</strong>——那种只有巴掌大小、用楠竹或水竹编织的圆形小蒸笼，与清朝的"格格"毫无关系。[reference:0][reference:1][reference:2]
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        万州格格主要有<strong class="text-river">羊肉格格、肥肠格格、排骨格格</strong>三种，底部垫上芋头、土豆或红薯，上面铺上拌好豆瓣酱、花椒面、辣椒面等调料的肉料，放入竹制蒸笼，层层叠叠架在蒸锅上猛火蒸熟。上桌前淋少许香油，撒上葱花和香菜，一笼一人份，趁热吃最过瘾。[reference:3][reference:4]
+      </p>
+    </div>
+
+    <!-- 三种格格 -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <!-- 羊肉格格 -->
+      <div class="glass rounded-3xl p-6 shadow-lg card-hover text-center">
+        <div class="text-5xl mb-3">🐑</div>
+        <h3 class="text-xl font-display font-bold text-river mb-2">羊肉格格</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-2">最受欢迎的经典款。选用渝巴山区山羊肉，入口麻辣鲜香，肉质软糯，一点膻味都没有。出锅时撒上大量新鲜香菜，既能去膻又增添清香，是万州人的心头好。[reference:5]</p>
+        <span class="inline-block bg-red-100 text-red-700 px-4 py-1.5 rounded-full text-sm font-bold">人气首选</span>
+      </div>
+      <!-- 肥肠格格 -->
+      <div class="glass rounded-3xl p-6 shadow-lg card-hover text-center">
+        <div class="text-5xl mb-3">🥘</div>
+        <h3 class="text-xl font-display font-bold text-river mb-2">肥肠格格</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-2">肥肠处理得极干净，毫无异味。油脂在蒸制过程中渗出，被底部的土豆红薯吸收，肥肠软糯有嚼头，麻辣味渗透到每一块肥肠里，下饭一绝。[reference:6]</p>
+        <span class="inline-block bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-bold">嚼劲十足</span>
+      </div>
+      <!-- 排骨格格 -->
+      <div class="glass rounded-3xl p-6 shadow-lg card-hover text-center">
+        <div class="text-5xl mb-3">🦴</div>
+        <h3 class="text-xl font-display font-bold text-river mb-2">排骨格格</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-2">精选软边纤排，骨头细肉多。排骨腌制入味后裹上米粉，蒸熟后轻轻一嗦即可脱骨。蒜香与麻辣交融，肉质鲜嫩多汁，垫底的土豆吸收肉汁后尤为美味。[reference:7]</p>
+        <span class="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-bold">蒜香脱骨</span>
+      </div>
+    </div>
+
+    <!-- 传奇故事 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📜 传奇故事</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        相传三国时期（公元221年），蜀汉昭烈帝刘备为关羽报仇，屯重兵于万州天生城，准备发动夷陵之战。刘备治军严明，下令不得侵扰百姓，士兵们的锅碗瓢盆等一切用具都不能从民间掠取。蜀军缺锅少罐，于是就地取材，砍来山上的竹子编织成碗口大小的蒸笼，拌上杂粮粉蒸羊肉食之，竟然香气扑鼻、爽口无比。从此，这种以竹笼蒸肉的做法便在万州流传开来，经过1800余年的演变，形成了今天的万州格格。[reference:8][reference:9]
+      </p>
+      <div class="mt-4 flex gap-3">
+        <span class="bg-river/10 text-river px-4 py-1.5 rounded-full text-sm">三国传说</span>
+        <span class="bg-golden/10 text-golden px-4 py-1.5 rounded-full text-sm">1800年历史</span>
+      </div>
+    </div>
+
+    <!-- 制作工艺 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🔥 制作工艺</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-lg leading-relaxed text-gray-700 mb-3">
+            万州格格的制作颇为讲究。先将大米掺入少许糯米和花椒，在锅中炒香后研磨成粗颗粒的米粉；新鲜羊腿肉（或排骨、肥肠）切成小块，加入剁椒、姜米、豆瓣酱、香油等调料腌制入味，再拌上米粉搅匀。[reference:10]
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700">
+            蒸笼底部垫上芋头、土豆或红薯块（最底下最好放一片鲜柑子叶去膻增香），再将拌好的肉料铺上。一个个巴掌大的竹笼层层叠叠架在大铁锅上，旺火蒸制约十分钟即熟。有些食客偏爱刚上汽八成熟的口感，称为吃<strong class="text-river">"滴笼水"</strong>，肉刚好熟过心，嚼劲十足。[reference:11]
+          </p>
+        </div>
+        <div class="bg-warm rounded-2xl p-5 flex flex-col justify-center">
+          <div class="space-y-3 text-sm text-gray-700">
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">主料</span><span>羊肉 / 肥肠 / 排骨</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">垫底</span><span>芋头 / 土豆 / 红薯</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">调料</span><span>豆瓣酱 / 花椒面 / 辣椒面 / 香油</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">蒸笼</span><span>楠竹 / 水竹 / 斑竹</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">时间</span><span>旺火蒸制约10分钟</span></div>
+            <div class="flex items-center gap-3"><span class="text-river font-bold w-20">口味</span><span>麻辣 / 微辣 / 咸鲜 / 回甜</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 推荐店铺 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">📍 推荐老店</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">耿格格（鸽子沟老店）</h4>
+          <p class="text-gray-600 text-sm leading-relaxed mb-2">万州老字号，本地人从小吃到大，羊肉格格和肥肠格格最受欢迎。藕圆子和萝卜汤也值得一试，人均约25元吃到撑。据说夏天不开门，去之前记得确认。[reference:12]</p>
+          <p class="text-gray-500 text-xs"><i class="fa fa-map-marker text-river mr-1"></i>太白街道卫校大门口桂香园旁负一楼</p>
+        </div>
+        <div class="bg-warm rounded-2xl p-5">
+          <h4 class="text-lg font-bold text-ink mb-2">秦二哥格格</h4>
+          <p class="text-gray-600 text-sm leading-relaxed mb-2">传承万州格格经典手艺，创始人聂龙云坚持传统蒸制工艺，认为万州格格不仅是美食，更承载着这座城市的烟火气与市井生活氛围。[reference:14]</p>
+          <p class="text-gray-500 text-xs"><i class="fa fa-map-marker text-river mr-1"></i>万州城区</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 吃法小贴士 -->
+    <div class="glass rounded-3xl p-8 shadow-xl mb-8">
+      <h2 class="text-2xl font-display font-bold text-river mb-4">🍽️ 地道吃法</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-3">
+        吃格格讲究<strong class="text-golden">趁热享用</strong>。刚端上桌的格格还冒着腾腾热气，先俯身深吸一口那竹香与肉香交织的蒸汽，然后才提筷轻轻拈起一块肉，放进嘴里细嚼慢咽——肉块软糯绵香，麻辣在舌尖化开，回味悠长。吃格格的乐趣还在于<strong class="text-river">吃完后将一个个空蒸笼叠成高高的一摞</strong>，仿佛在宣告"战果"，充满市井趣味。[reference:15]
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        一般标配<strong class="text-river">一碗海带汤或萝卜汤、一碗白米饭</strong>，先喝几口热汤疏通肠胃，再夹一坨格格肉送入口中，麻辣鲜香顿时唤醒味蕾。老吃客还会蘸上又辣又香的油煎干海椒面，一口气吃上七八笼，吃得酣畅淋漓。[reference:16]
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 底部导航按钮 -->
+<div class="fixed bottom-6 left-0 right-0 flex justify-center z-50 px-4">
+  <a href="https://uri.amap.com/search?keyword=万州鸽子沟格格" target="_blank"
+     class="fixed-btn bg-river text-white px-8 py-4 rounded-full text-lg font-bold btn-hover flex items-center gap-3 shadow-2xl">
+    <i class="fa fa-map-marker text-2xl"></i> 一键导航到格格老店
+  </a>
+</div>
+
+<!-- 更多美食 -->
+<section class="py-10 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-2xl font-display font-bold text-river mb-6">更多万州美味</h3>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="food-kaoyu.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">万州烤鱼</a>
+      <a href="food-noodles.html" class="glass px-7 py-3 rounded-full btn-hover font-bold text-ink">万州杂酱面</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-white text-center py-6">
+  <a href="../index.html" class="text-gray-400 hover:text-white">← 返回主页</a>
+  <p class="text-gray-500 text-sm mt-2">© 2025 万州旅游宣传网</p>
+</footer>
+
+<script defer src="../../assets/js/districtfx.js?v=20261019e"></script>
+</body>
+</html>

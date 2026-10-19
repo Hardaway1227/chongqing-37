@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吊脚楼营造 · 山城人文 · 重庆</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../wanzhou/fonts/fonts.css">
+<style>
+:root{--bg:#0a0d12;--card:rgba(255,255,255,.045);--card2:rgba(255,255,255,.07);--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.17);
+--ink:#eaf0f8;--ink2:#aeb9c9;--dim:#7d8798;--ac:#f2c14e;--ac2:#ffe6a8;--fd:"Ma Shan Zheng","STKaiti","KaiTi",cursive;--sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 24px}
+.glass{background:var(--card);backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.38)}
+.topbar{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--ac) 7%, rgba(10,13,18,.86));border-bottom:1px solid color-mix(in srgb,var(--ac) 30%, transparent);position:sticky}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;position:relative}
+.brand{font-family:var(--fd);font-size:22px;color:var(--ac);text-decoration:none;letter-spacing:.05em}
+.topbar nav a{color:var(--ink2);text-decoration:none;font-size:14px;margin-left:16px;transition:.2s}
+.topbar nav a:hover{color:var(--ac)}
+.hero{position:relative;height:min(52vh,430px);min-height:300px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;transform:scale(1.03)}
+.hero .mask{position:absolute;inset:0;background:linear-gradient(180deg,#f2c14e22 0%,rgba(10,13,18,.30) 40%,var(--bg) 100%)}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:0 24px 34px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.26em;color:var(--ac);border:1px solid #f2c14e66;padding:4px 14px;border-radius:99px;margin-bottom:12px;background:rgba(10,13,18,.4)}
+.hero h1{font-family:var(--fd);font-size:clamp(38px,6vw,62px);font-weight:400;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.6)}
+.sec{margin-top:42px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.sec-head .idx{font-family:var(--fd);font-size:24px;color:var(--ac)}
+.sec-head h2{font-size:clamp(21px,3vw,28px);font-weight:800;background:linear-gradient(120deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+.prose p{color:var(--ink2);font-size:15.5px;line-height:2;margin-bottom:14px}
+.prose b{color:var(--ink)}
+.cust{display:grid;gap:12px}
+.cust li{list-style:none;display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;color:var(--ink2);font-size:14.5px;transition:.3s}
+.cust li:hover{border-color:color-mix(in srgb,var(--ac) 45%, transparent);transform:translateX(4px)}
+.cust .dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:var(--ac);margin-top:9px;box-shadow:0 0 10px var(--ac)}
+.quotebox{background:linear-gradient(160deg,#f2c14e22,transparent 75%);border:1px solid #f2c14e44;border-radius:16px;padding:22px 26px;color:var(--ink2);font-size:14.5px}
+.quotebox b{color:var(--ac);display:block;margin-bottom:6px;letter-spacing:.1em;font-size:13px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.rcard{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s}
+.rcard:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(0,0,0,.5);border-color:var(--line2)}
+.rcard .ph{height:130px;background:linear-gradient(140deg,#1a2330,#0f141c)}.rcard .ph img{width:100%;height:100%;object-fit:cover}
+.rcard .tx{padding:14px 16px}.rcard h4{font-size:15px;margin-bottom:4px}.rcard p{color:var(--ink2);font-size:12.5px;line-height:1.6}
+.pager{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pg{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;transition:.3s;display:flex;flex-direction:column;gap:4px}
+.pg:hover{border-color:var(--ac);transform:translateY(-3px)}
+.pg .dir{font-size:11px;letter-spacing:.2em;color:var(--dim)}.pg .nm{font-family:var(--fd);font-size:21px;color:var(--ac)}
+.pg.next{text-align:right;align-items:flex-end}
+.foot{margin-top:56px;padding:40px 0 48px;border-top:1px solid var(--line);text-align:center}
+.foot .seal{font-family:var(--fd);font-size:60px;line-height:1;color:var(--ac);opacity:.14;user-select:none}
+.foot p{color:var(--dim);font-size:13px;margin-top:6px}
+@media(max-width:720px){.pager{grid-template-columns:1fr}.pg.next{text-align:left;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="bgdeco" aria-hidden="true"><div class="pat" style="background-image:url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M0 32h64M32 0v64'/%3E%3Cpath d='M0 0l32 32L0 64M64 0 32 32l32 32'/%3E%3C/g%3E%3C/svg%3E')"></div>
+<svg class="motif" viewBox="0 0 1440 160" preserveAspectRatio="none"><path d="M0 160V118 70 118 100 90 100 90 118 150 118 150 92 178 74 206 92 206 118 270 118 270 100 296 82 322 100 322 118 390 118 390 96 414 78 438 96 438 118 510 118 510 100 536 82 562 100 562 118 640 118 640 94 664 76 688 94 688 118 760 118 760 100 786 82 812 100 812 118 880 118 880 92 908 74 936 92 936 118 1010 118 1010 100 1036 82 1062 100 1062 118 1140 118 1140 94 1164 76 1188 94 1188 118 1260 118 1260 100 1286 82 1312 100 1312 118 1390 118 1390 92 1414 74 1440 92 1440 160Z"/></svg></div>
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="../index.html#culture">‹ 人文色彩</a>
+  <nav><a href="../index.html#culture">人文总览</a><a href="../index.html">重庆总览</a></nav>
+</div></header>
+
+<section class="hero">
+  <img src="../assets/pic/culture/c4.jpg" alt="吊脚楼营造">
+  <div class="mask"></div>
+  <div class="cap"><span class="tag">人文 · 人文色彩</span><h1>吊脚楼营造</h1></div>
+</section>
+
+<div class="wrap">
+  <section class="sec">
+    <div class="sec-head"><span class="idx">壹</span><h2>它的由来</h2><span class="line"></span></div>
+    <div class="prose"><p>重庆山多平地少，先民借鉴干栏式建筑，发明了&#x27;不挖山、不填方&#x27;的吊脚楼：用木柱把房子撑在陡坡上，一柱落地、三面悬空。</p><p>穿斗式木构架不用一颗铁钉，靠榫卯咬合，抗震又透气，是山城最聪明的建筑解法。</p><p>洪崖洞、龚滩、濯水保存至今的吊脚楼群，都是这套营造体系的活标本。</p></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="idx">贰</span><h2>活动与习俗</h2><span class="line"></span></div>
+    <ul class="cust"><li><span class="dot"></span><span>夜游洪崖洞看&#x27;千与千寻&#x27;式的崖壁灯火</span></li><li><span class="dot"></span><span>去龚滩、中山古镇看原生态吊脚楼群</span></li><li><span class="dot"></span><span>在湖广会馆看穿斗式构架的实物展示</span></li></ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="idx">叁</span><h2>一句话读懂</h2><span class="line"></span></div>
+    <div class="quotebox"><b>吊脚楼营造</b>吊脚楼是重庆人和山的谈判结果——不征服，也不退让，借用坡度把日子架起来。</div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="idx">肆</span><h2>再看看这几页</h2><span class="line"></span></div>
+    <div class="grid3"><a class="rcard" href="c5.html"><div class="ph"><img src="../assets/pic/culture/c5.jpg" alt="" loading="lazy"></div><div class="tx"><h4>铜梁龙舞</h4><p>铜梁龙舞起于明代，兴于清代，龙具&#x27;大蠕龙&#x27;长几十米，被誉为&#x27;中华第一龙&#x27;。…</p></div></a><a class="rcard" href="c6.html"><div class="ph"><img src="../assets/pic/culture/c6.jpg" alt="" loading="lazy"></div><div class="tx"><h4>土家摆手舞</h4><p>摆手舞是土家族祭祀性舞蹈，&#x27;舍巴日&#x27;（摆手节）上，人们围着摆手堂的旗杆跳通宵…</p></div></a><a class="rcard" href="c7.html"><div class="ph"><img src="../assets/pic/culture/c7.jpg" alt="" loading="lazy"></div><div class="tx"><h4>綦江农民版画</h4><p>1980 年代，綦江的农民拿起刻刀，把秧歌、婚嫁、赶场刻进木板再拓成画。…</p></div></a></div>
+  </section>
+
+  <nav class="pager"><a class="pg prev" href="c3.html"><span class="dir">上一页</span><span class="nm">火锅江湖</span></a><a class="pg next" href="c5.html"><span class="dir">下一页</span><span class="nm">铜梁龙舞</span></a></nav>
+
+  <footer class="foot">
+    <div class="seal">渝</div>
+    <p>山城人文 —— 三千年的巴渝，活在日常里</p>
+  </footer>
+</div>
+<script defer src="../assets/js/pagefx.js?v=20261019k"></script>
+</body>
+</html>

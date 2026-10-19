@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>巴渝根脉 · 山城人文 · 重庆</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../wanzhou/fonts/fonts.css">
+<style>
+:root{--bg:#0a0d12;--card:rgba(255,255,255,.045);--card2:rgba(255,255,255,.07);--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.17);
+--ink:#eaf0f8;--ink2:#aeb9c9;--dim:#7d8798;--ac:#ff4d2e;--ac2:#ffb08a;--fd:"Ma Shan Zheng","STKaiti","KaiTi",cursive;--sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 24px}
+.glass{background:var(--card);backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.38)}
+.topbar{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--ac) 7%, rgba(10,13,18,.86));border-bottom:1px solid color-mix(in srgb,var(--ac) 30%, transparent);position:sticky}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;position:relative}
+.brand{font-family:var(--fd);font-size:22px;color:var(--ac);text-decoration:none;letter-spacing:.05em}
+.topbar nav a{color:var(--ink2);text-decoration:none;font-size:14px;margin-left:16px;transition:.2s}
+.topbar nav a:hover{color:var(--ac)}
+.hero{position:relative;height:min(52vh,430px);min-height:300px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;transform:scale(1.03)}
+.hero .mask{position:absolute;inset:0;background:linear-gradient(180deg,#ff4d2e22 0%,rgba(10,13,18,.30) 40%,var(--bg) 100%)}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:0 24px 34px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.26em;color:var(--ac);border:1px solid #ff4d2e66;padding:4px 14px;border-radius:99px;margin-bottom:12px;background:rgba(10,13,18,.4)}
+.hero h1{font-family:var(--fd);font-size:clamp(38px,6vw,62px);font-weight:400;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.6)}
+.sec{margin-top:42px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.sec-head .idx{font-family:var(--fd);font-size:24px;color:var(--ac)}
+.sec-head h2{font-size:clamp(21px,3vw,28px);font-weight:800;background:linear-gradient(120deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+.prose p{color:var(--ink2);font-size:15.5px;line-height:2;margin-bottom:14px}
+.prose b{color:var(--ink)}
+.cust{display:grid;gap:12px}
+.cust li{list-style:none;display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;color:var(--ink2);font-size:14.5px;transition:.3s}
+.cust li:hover{border-color:color-mix(in srgb,var(--ac) 45%, transparent);transform:translateX(4px)}
+.cust .dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:var(--ac);margin-top:9px;box-shadow:0 0 10px var(--ac)}
+.quotebox{background:linear-gradient(160deg,#ff4d2e22,transparent 75%);border:1px solid #ff4d2e44;border-radius:16px;padding:22px 26px;color:var(--ink2);font-size:14.5px}
+.quotebox b{color:var(--ac);display:block;margin-bottom:6px;letter-spacing:.1em;font-size:13px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.rcard{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s}
+.rcard:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(0,0,0,.5);border-color:var(--line2)}
+.rcard .ph{height:130px;background:linear-gradient(140deg,#1a2330,#0f141c)}.rcard .ph img{width:100%;height:100%;object-fit:cover}
+.rcard .tx{padding:14px 16px}.rcard h4{font-size:15px;margin-bottom:4px}.rcard p{color:var(--ink2);font-size:12.5px;line-height:1.6}
+.pager{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pg{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;transition:.3s;display:flex;flex-direction:column;gap:4px}
+.pg:hover{border-color:var(--ac);transform:translateY(-3px)}
+.pg .dir{font-size:11px;letter-spacing:.2em;color:var(--dim)}.pg .nm{font-family:var(--fd);font-size:21px;color:var(--ac)}
+.pg.next{text-align:right;align-items:flex-end}
+.foot{margin-top:56px;padding:40px 0 48px;border-top:1px solid var(--line);text-align:center}
+.foot .seal{font-family:var(--fd);font-size:60px;line-height:1;color:var(--ac);opacity:.14;user-select:none}
+.foot p{color:var(--dim);font-size:13px;margin-top:6px}
+@media(max-width:720px){.pager{grid-template-columns:1fr}.pg.next{text-align:left;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="bgdeco" aria-hidden="true"><div class="pat" style="background-image:url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M36 0 72 36 36 72 0 36Z'/%3E%3Cpath d='M36 14 58 36 36 58 14 36Z'/%3E%3Ccircle cx='36' cy='36' r='3'/%3E%3C/g%3E%3C/svg%3E')"></div>
+<svg class="motif" viewBox="0 0 1440 160" preserveAspectRatio="none"><path d="M0 160V110 90 190 74 300 46 420 74 540 40 660 74 780 50 900 74 1020 42 1140 74 1260 50 1380 66 1440 74 1440 160Z"/></svg></div>
+
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="../index.html#culture">‹ 人文色彩</a>
+  <nav><a href="../index.html#culture">人文总览</a><a href="../index.html">重庆总览</a></nav>
+</div></header>
+
+<section class="hero">
+  <img src="../assets/pic/culture/c1.jpg" alt="巴渝根脉">
+  <div class="mask"></div>
+  <div class="cap"><span class="tag">人文 · 人文色彩</span><h1>巴渝根脉</h1></div>
+</section>
+
+<div class="wrap">
+  <section class="sec">
+    <div class="sec-head"><span class="idx">壹</span><h2>它的由来</h2><span class="line"></span></div>
+    <div class="prose"><p>巴人是重庆最早的居民。先秦时期，巴人以江州（今渝中半岛一带）为都，靠井盐贸易立邦，『以盐立邦』是这片土地的第一桶金。</p><p>巴蔓子将军为保城池自刎留头的传说，把『忠义』两个字刻进了重庆的城市性格。</p><p>后来巴渝舞进入汉宫成为武舞，&#x27;其气势猛烈&#x27;的底色，至今还在这座城市的脾气里。</p></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="idx">贰</span><h2>活动与习俗</h2><span class="line"></span></div>
+    <ul class="cust"><li><span class="dot"></span><span>逛钓鱼城、涞滩古镇，触摸巴宋战争的遗址现场</span></li><li><span class="dot"></span><span>看一场巴渝舞或川剧开场鼓，感受&#x27;武舞同源&#x27;的节奏</span></li><li><span class="dot"></span><span>到中国三峡博物馆看巴人青铜器与船棺</span></li></ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="idx">叁</span><h2>一句话读懂</h2><span class="line"></span></div>
+    <div class="quotebox"><b>巴渝根脉</b>巴渝根脉不是博物馆里的概念——它是火锅桌上的豪爽、爬坡上坎的耐力、和说走就走的江湖气共同的来处。</div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="idx">肆</span><h2>再看看这几页</h2><span class="line"></span></div>
+    <div class="grid3"><a class="rcard" href="c2.html"><div class="ph"><img src="../assets/pic/culture/c2.jpg" alt="" loading="lazy"></div><div class="tx"><h4>川江号子</h4><p>川江航道滩多水急，木船上行全靠纤夫拉纤。号子是劳动的口令，也是航行的&#x27;交通调…</p></div></a><a class="rcard" href="c3.html"><div class="ph"><img src="../assets/pic/culture/c3.jpg" alt="" loading="lazy"></div><div class="tx"><h4>火锅江湖</h4><p>火锅的前身是码头苦力的&#x27;水八块&#x27;：牛下水便宜，一锅麻辣卤汁滚着吃，围锅而坐不…</p></div></a><a class="rcard" href="c4.html"><div class="ph"><img src="../assets/pic/culture/c4.jpg" alt="" loading="lazy"></div><div class="tx"><h4>吊脚楼营造</h4><p>重庆山多平地少，先民借鉴干栏式建筑，发明了&#x27;不挖山、不填方&#x27;的吊脚楼：用木柱…</p></div></a></div>
+  </section>
+
+  <nav class="pager"><a class="pg prev" href="c12.html"><span class="dir">上一页</span><span class="nm">黄葛树与梯坎</span></a><a class="pg next" href="c2.html"><span class="dir">下一页</span><span class="nm">川江号子</span></a></nav>
+
+  <footer class="foot">
+    <div class="seal">渝</div>
+    <p>山城人文 —— 三千年的巴渝，活在日常里</p>
+  </footer>
+</div>
+<script defer src="../assets/js/pagefx.js?v=20261019k"></script>
+</body>
+</html>
