@@ -46,7 +46,9 @@
       if (!groups[g]) return;
       html += '<div class="pl-g"><b>' + g + '</b><div class="pl-chips">';
       groups[g].forEach(function (d) {
-        html += '<button type="button" class="pl-chip" data-n="' + d.n + '">' + d.n.replace(/[区县]$/, "") + '</button>';
+        var short = d.n.replace(/[区县]$/, "");
+        if (short.length < 2) short = d.n;      // 忠县 → 不能只剩下一个「忠」
+        html += '<button type="button" class="pl-chip" data-n="' + d.n + '">' + short + '</button>';
       });
       html += '</div></div>';
     });
