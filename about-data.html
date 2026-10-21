@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数据与方法 · 山城重庆</title>
+<meta name="description" content="本页说明站内数据的来源、处理方法与估算口径：SRTM 高程、行政区划轮廓、图片素材、行程里程与车时的计算方式，以及作品的已知局限。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据与方法 · 山城重庆">
+<meta property="og:description" content="站内数据来源、处理方法、估算口径与已知局限。">
+<meta property="og:image" content="https://hardaway1227.github.io/chongqing-37/assets/pic/yuzhong/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101620'/%3E%3Cpath d='M4 25L12 11L18 20L21 15L28 25Z' fill='%233ecfa0'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="wanzhou/fonts/fonts.css">
+<style>
+:root{--bg:#0a0d12;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.09);--ink:#eaf0f8;--ink2:#aeb9c9;--dim:#7d8798;
+ --ac:#3ecfa0;--ac2:#8fe8c8;--fd:"Ma Shan Zheng","STKaiti",cursive;--sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:radial-gradient(900px 520px at 84% -10%,rgba(62,207,160,.14),transparent 62%)}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 24px}
+.topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(10,13,18,.82);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--fd);font-size:22px;color:var(--ac);text-decoration:none}
+.topbar nav a{color:var(--ink2);text-decoration:none;font-size:14px;margin-left:18px}
+.topbar nav a:hover{color:var(--ac)}
+.hero{padding:46px 0 8px}
+.hero h1{font-family:var(--fd);font-size:clamp(34px,5vw,50px);font-weight:400;line-height:1.2}
+.hero p{color:var(--ink2);font-size:15px;margin-top:12px;max-width:42em}
+section{padding:34px 0;border-top:1px solid var(--line);margin-top:30px}
+section:first-of-type{border-top:0}
+h2{font-size:19px;font-weight:700;margin-bottom:14px;display:flex;align-items:baseline;gap:10px}
+h2 i{font-style:normal;font-family:var(--fd);font-size:22px;color:var(--ac)}
+p{color:var(--ink2);font-size:14.5px;margin-bottom:12px;max-width:44em}
+b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:12px;letter-spacing:.06em}
+td:first-child{color:var(--ink);white-space:nowrap}
+ul{margin:8px 0 14px 18px;color:var(--ink2);font-size:14px}
+li{margin-bottom:6px}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:99px;border:1px solid rgba(62,207,160,.4);color:var(--ac);margin-left:6px}
+.foot{padding:40px 0 60px;color:var(--dim);font-size:12.5px;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+.foot a{color:var(--ac);text-decoration:none}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">‹ 山城重庆</a>
+  <nav><a href="index.html">首页</a><a href="data.html">数据对比</a><a href="profile.html">沿江剖面</a><a href="plan.html">行程</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>数据与方法</h1>
+    <p>这一页说明站内每个数字是从哪来的、怎么算的、哪些地方只是估算。做法透明，比数字好看更重要。</p>
+  </div>
+
+  <section>
+    <h2><i>壹</i>数据来源</h2>
+    <table>
+      <tr><th>数据</th><th>来源</th><th>用途</th></tr>
+      <tr>
+        <td>地形高程</td>
+        <td>公开 SRTM / ALOS 30m 高程（通过 Terrain-Tiles terrarium 编码获取），重采样为 2048² 高程场</td>
+        <td>立体地形、等高线、高程剖面、山影</td>
+      </tr>
+      <tr>
+        <td>卫星影像</td>
+        <td>Esri World Imagery（与高程同 bbox 对齐）</td>
+        <td>地形「影像」模式底色</td>
+      </tr>
+      <tr>
+        <td>行政区划轮廓</td>
+        <td>公开行政区划资料整理为折线（38 个区县）</td>
+        <td>区县边界绘制、悬停高亮、点击判定</td>
+      </tr>
+      <tr>
+        <td>区县属性</td>
+        <td>县城海拔、海拔幅度、经纬度、片区归属</td>
+        <td>数据对比页、行程里程计算、地形标签</td>
+      </tr>
+      <tr>
+        <td>地标尺寸</td>
+        <td>各景区 / 主管部门公开资料（洪崖洞 11 层 79m、解放碑 27.5m、大礼堂直径 46.33m、索道跨江 1166m 等）</td>
+        <td>三维地标建模尺度、尺寸标注、数据依据栏</td>
+      </tr>
+      <tr>
+        <td>图片</td>
+        <td>站内真实拍摄照片，按区县归档；缺图时用占位色块而非生成图</td>
+        <td>全部卡片、hero、今昔对照</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><i>贰</i>处理方法</h2>
+    <p><b>高程场</b>　把 2048² 的 PNG 按蓝通道解码为米制高程（terrarium 编码：<code>h = (R×256 + G + B/256) − 32768</code>），再按市域掩膜统一裁切几何与贴图，避免界外出现条纹伪影。</p>
+    <p><b>网格与取点</b>　渲染用 1024² 网格；鼠标取高程不走百万级三角面求交，而是在高程场上做射线步进求交（<code>pickTerrain</code>），不依赖矩阵刷新时机。</p>
+    <p><b>三维地标</b>　全部程序化生成，<b>1 个 three.js 单位 = 1 米</b>。中式屋顶用自研曲面（反宇 + 檐口起翘 + 四角起翘），吊脚楼、斗拱、拱桥、悬索均为构件级建模；放真实 glb 进 <code>assets/models/</code> 即可替换。</p>
+    <p><b>距离与车时</b>　区县间用球面距离（haversine），乘以 <b>1.32</b> 的公路折算系数，按 <b>52 km/h</b> 平均车速估算；单日上限设为 3 个区县 / 5.5 小时。</p>
+    <p><b>行程排序</b>　先以最近邻构造初始解，再用开放路径 2-opt 优化（固定起点不翻转首段）。</p>
+  </section>
+
+  <section>
+    <h2><i>叁</i>口径与局限 <span class="tag">请评委注意</span></h2>
+    <ul>
+      <li><b>海拔</b>指县城所在地的平均海拔，不是区县最高点；“海拔幅度”才是境内最高与最低之差。</li>
+      <li><b>里程与车时是估算值</b>，按直线折算与平均车速计算，不反映实时路况、山路限速与轮渡，<b>不能替代导航</b>。</li>
+      <li><b>地形不作测绘依据</b>：30m 数据经重采样与视觉增强，用于呈现“山—水—城”格局，不作为工程或规划依据。</li>
+      <li><b>三维地标为程序化示意模型</b>，按公开尺寸还原体量与形制，细节（窗格、纹样、植被）为示意，不代表实测。</li>
+      <li><b>区县数量为 38</b>（26 区 + 12 县），其中万州单独使用标杆页 <code>wanzhou/</code>。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><i>肆</i>版权与素材</h2>
+    <p>站内照片为真实拍摄素材，仅用于本作品展示；地形与影像数据来自上述公开来源，按其原始许可使用。三维模型、图表、动效均为本项目自行编写（原生 WebGL / SVG / Canvas），未使用付费模型库。</p>
+    <p>如用于公开发布或参赛展示，请保留本页的出处说明。</p>
+  </section>
+
+  <section>
+    <h2><i>伍</i>技术栈</h2>
+    <p>原生 HTML / CSS / JavaScript，无框架、无构建；三维使用 Three.js（本地引入），后期（泛光 / SSAO）为自建管线；图表为手写 SVG；地形与数据在浏览器端解码，无后端、无数据库、无在线接口。</p>
+  </section>
+
+  <div class="foot">
+    山城重庆 · 三十八区县数字志　|　<a href="index.html">返回首页</a>
+  </div>
+</div>
+</body>
+</html>

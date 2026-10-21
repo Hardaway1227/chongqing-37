@@ -180,7 +180,13 @@ def more_of(d, it):
         parts = []
         for km2, n2 in near[:3]:
             s2 = SLUGS.get(n2)
-            parts.append(f'<a href="../{s2}.html">{n2} {int(round(km2))} km</a>' if s2 else f'{n2} {int(round(km2))} km')
+            if not s2:
+                parts.append(f'{n2} {int(round(km2))} km')
+            elif os.path.exists(os.path.join(DST, s2 + ".html")):
+                parts.append(f'<a href="../{s2}.html">{n2} {int(round(km2))} km</a>')
+            else:
+                # 万州没有 districts/wanzhou.html，实际在 wanzhou/index.html
+                parts.append(f'<a href="../../wanzhou/index.html">{n2} {int(round(km2))} km</a>')
         go += f'<div class="gorow"><b>最近的三个区县</b><span>{" · ".join(parts)}</span></div>'
 
     html = ""

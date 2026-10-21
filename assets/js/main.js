@@ -537,7 +537,13 @@
           ensureSkipBtn(mask);
         }
         // 各模块自身均有 THREE 缺失保护，失败只影响对应模块
-        try { window.Terrain.init(); } catch (e) { console.error("terrain:", e); }
+        window.__startTerrain = function () {
+          if (window.__terrainStarted) return;
+          window.__terrainStarted = true;
+          try { window.Terrain.init(); } catch (e) { console.error("terrain:", e); }
+        };
+        // 地形数据尚未加载时不初始化，等 terrain-loader 加载完再调用
+        if (window.CHQ_DEM) window.__startTerrain();
         try { window.Landmark3D.init(); } catch (e) { console.error("model:", e); }
         try { window.Guess.init(); } catch (e) { console.error("guess:", e); }
         try { window.RailMap.init(); } catch (e) { console.error("rail:", e); }

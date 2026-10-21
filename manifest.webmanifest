@@ -1,0 +1,16 @@
+{
+  "name": "山城重庆 · 三十八区县数字志",
+  "short_name": "山城重庆",
+  "description": "重庆区县数字志：真实地形、三维地标、一条江的叙事主线。",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0d12",
+  "theme_color": "#0a0d12",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -72,6 +72,21 @@
     '.pfx-voice.speaking i{animation:pfxEq .9s ease-in-out infinite}',
     '@keyframes pfxEq{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.5)}}',
     '@media(max-width:620px){.pfx-voice span{display:none}.pfx-voice{padding:10px;border-radius:50%}}'
+    ,
+    /* 移动端可点目标 ≥44px */
+    '@media (max-width:820px){',
+    '.nav-list a,.nav-burger,.topbar nav a,.navlink,.mobileMenu a,.mm,.hv,.fbtn,.c-dot,.pg,.pl-chip,.ag-chip,.ag-btn,.pfx-voice,',
+    '.side-toc a,.rv-resume,.tp-enter,.hero-cta .btn,.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}',
+    '.nav-list a,.topbar nav a,.navlink{padding-top:10px;padding-bottom:10px}',
+    '}'
+    ,
+    /* 无障碍：跳转链接 + 焦点可见 */
+    '.pfx-skip{position:fixed;left:12px;top:-60px;z-index:200;padding:10px 16px;border-radius:0 0 10px 10px;',
+    'background:#c9a227;color:#111;font-weight:700;font-size:13px;text-decoration:none;transition:top .2s}',
+    '.pfx-skip:focus{top:0}',
+    ':focus-visible{outline:2px solid var(--ac,#ff7a45);outline-offset:3px;border-radius:4px}',
+    'a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--ac,#ff7a45);outline-offset:3px}',
+    '@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}'
   ].join("");
 
   function ensureStyle() {
@@ -211,6 +226,61 @@
     document.documentElement.classList.add('pfx-typo');
   }
 
+
+  /* ---------- 无障碍：跳到主内容 ---------- */
+  function skipLink() {
+    if (document.querySelector(".pfx-skip")) return;
+    var main = document.querySelector("main") || document.querySelector("#hero") ||
+      document.querySelector(".hero") || document.querySelector("h1");
+    if (!main) return;
+    if (!main.id) main.id = "main";
+    var a = document.createElement("a");
+    a.className = "pfx-skip";
+    a.href = "#" + main.id;
+    a.textContent = "跳到主要内容";
+    a.addEventListener("click", function () {
+      var t = document.getElementById(main.id);
+      if (t) { t.setAttribute("tabindex", "-1"); }
+    });
+    document.body.appendChild(a);
+  }
+
+
+  /* ---------- PWA：离线缓存 ---------- */
+  function pwa() {
+    if (!("serviceWorker" in navigator)) return;
+    if (location.protocol !== "http:" && location.protocol !== "https:") return;
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function () { });
+    });
+    // manifest 只在首页注入，避免每个页面重复
+    if (!document.querySelector('link[rel="manifest"]') && /index\.html$|\/$/.test(location.pathname)) {
+      var l = document.createElement("link");
+      l.rel = "manifest";
+      l.href = "manifest.webmanifest";
+      document.head.appendChild(l);
+    }
+  }
+
+
+  /* ---------- 足迹：记录访问过的区县 ---------- */
+  function footprint() {
+    var m = location.pathname.match(/districts\/([a-z]+)\.html$/);
+    if (!m || m[1] === "index") return;
+    var h1 = document.querySelector("h1");
+    var name = h1 ? h1.textContent.trim() : m[1];
+    try {
+      var key = "chq.visited";
+      var list = JSON.parse(localStorage.getItem(key) || "[]");
+      if (!Array.isArray(list)) list = [];
+      var hit = null;
+      for (var i = 0; i < list.length; i++) if (list[i].s === m[1]) hit = list[i];
+      if (hit) { hit.n = name; hit.t = Date.now(); }
+      else list.push({ s: m[1], n: name, t: Date.now() });
+      localStorage.setItem(key, JSON.stringify(list.slice(-80)));
+    } catch (e) { }
+  }
+
   /* ---------- 语音朗读（合成音） ---------- */
   function voicePass() {
     if (!("speechSynthesis" in window)) return;
@@ -342,6 +412,9 @@
     if (!OUT_ONLY) enter();
     typoPass();
     voicePass();
+    skipLink();
+    pwa();
+    footprint();
     choreograph();
   }
 

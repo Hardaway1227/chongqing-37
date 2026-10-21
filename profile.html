@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沿江剖面 · 山城重庆</title>
+<meta name="description" content="从江津到奉节，沿长江主干取样真实 SRTM 高程，画出七百公里的江面海拔曲线与途经区县，把「一条江」从比喻变成数据。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="沿江剖面 · 山城重庆">
+<meta property="og:description" content="从江津到奉节，沿长江主干取样真实高程，画出七百公里的海拔曲线。">
+<meta property="og:image" content="https://hardaway1227.github.io/chongqing-37/assets/pic/yuzhong/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101620'/%3E%3Cpath d='M4 22L10 14L16 19L22 11L28 18V26H4Z' fill='%235aa8ff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="wanzhou/fonts/fonts.css">
+<style>
+:root{--bg:#0a0d12;--line:rgba(255,255,255,.09);--ink:#eaf0f8;--ink2:#aeb9c9;--dim:#7d8798;--ac:#5aa8ff;
+ --fd:"Ma Shan Zheng","STKaiti",cursive;--sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.8;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 520px at 80% -8%,rgba(90,168,255,.15),transparent 62%)}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px}
+.topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(10,13,18,.82);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--fd);font-size:22px;color:var(--ac);text-decoration:none}
+.topbar nav a{color:var(--ink2);text-decoration:none;font-size:14px;margin-left:18px}
+.topbar nav a:hover{color:var(--ac)}
+.hero{padding:44px 0 6px}
+.hero h1{font-family:var(--fd);font-size:clamp(34px,5vw,50px);font-weight:400;line-height:1.2}
+.hero p{color:var(--ink2);font-size:15px;margin-top:12px;max-width:46em}
+.panel{margin:26px 0 20px;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--ink2);margin-top:12px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+#pv{width:100%;height:auto;display:block}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:18px 0 40px}
+.stat p{font-size:11.5px;color:var(--dim);letter-spacing:.08em}
+.stat b{display:block;font-size:22px;color:var(--ac);font-variant-numeric:tabular-nums;line-height:1.3}
+.note{font-size:12.5px;color:var(--dim);line-height:1.9}
+.loading{padding:60px 0;text-align:center;color:var(--dim);font-size:13px}
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">‹ 山城重庆</a>
+  <nav><a href="index.html">首页</a><a href="data.html">数据对比</a><a href="about-data.html">数据与方法</a><a href="plan.html">行程</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>沿江剖面</h1>
+    <p>从江津入境到奉节出峡，把十个沿江区县的坐标连成一条线，沿线每隔约两公里取一次真实 SRTM 高程，画成一条曲线。它把「一条江」从比喻变成了可读的数据。</p>
+  </div>
+
+  <div class="panel">
+    <div id="pvBox"><div class="loading" id="pvLoading">正在读取 2048² 高程场…</div></div>
+    <div class="legend">
+      <span><i style="background:#5aa8ff"></i>沿线地表高程</span>
+      <span><i style="background:#ff7a45"></i>途经区县（连线节点）</span>
+      
+    </div>
+  </div>
+
+  <div class="stats" id="pvStats"></div>
+
+  <p class="note">
+    取样方式：沿江津→巴南→渝中→长寿→涪陵→丰都→忠县→万州→云阳→奉节的区县坐标连线，按约 2 km 间隔在高程场中取点，因此横轴是<b>连线累计距离</b>，不是航道里程（长江重庆段实际河道约 691 km，弯曲远大于直线）。
+    曲线取的是沿线<b>地表高程</b>而非水面高程：区县驻地多在山坡或阶地上，取样点会掠过岸坡与山脊，所以起伏比江面大得多——这正是山城的形态。<br>
+    高程数据：SRTM/ALOS 30m（terrarium 编码）· 处理方法见 <a href="about-data.html" style="color:var(--ac)">数据与方法</a>。
+  </p>
+</div>
+
+<script defer src="assets/js/data.js"></script>
+<script defer src="assets/js/profile.js?v=20261019e"></script>
+</body>
+</html>
