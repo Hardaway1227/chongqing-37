@@ -1201,6 +1201,29 @@ window.Terrain = (function () {
     const panel = document.getElementById("profPanel");
     if (panel) panel.hidden = !profileOn;
     if (canvas) canvas.style.cursor = profileOn ? "crosshair" : "";
+
+    // 操作提示 + 右键终点
+    if (!window.__profHint) {
+      var st = document.createElement("style");
+      st.textContent = ".prof-hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);" +
+        "z-index:6;padding:7px 14px;border-radius:99px;font-size:12px;letter-spacing:.04em;" +
+        "color:#ffd9c6;background:rgba(12,15,20,.82);border:1px solid rgba(255,122,69,.45);" +
+        "backdrop-filter:blur(8px);pointer-events:none;white-space:nowrap}";
+      document.head.appendChild(st);
+      var h = document.createElement("div");
+      h.className = "prof-hint";
+      h.textContent = "左键点起点 · 右键点终点";
+      var host = (canvas && canvas.parentNode) || document.body;
+      host.appendChild(h);
+      window.__profHint = h;
+      if (canvas) {
+        canvas.addEventListener("contextmenu", function (ev) {
+          ev.preventDefault();
+          if (profileOn) addProfilePoint(ev);
+        });
+      }
+    }
+    if (window.__profHint) window.__profHint.style.display = profileOn ? "" : "none";
   }
   function clearProfile() {
     if (profLine) { scene.remove(profLine); profLine.geometry.dispose(); profLine.material.dispose(); profLine = null; }

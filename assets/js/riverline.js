@@ -30,14 +30,16 @@
   function resumeChip() {
     var seen = loadSeen();
     if (seen.length < 2) return;
-    var last = seen[seen.length - 1];
+    var last = "";
+    try { last = localStorage.getItem("chq.river.last") || ""; } catch (e) { }
+    if (!last) last = seen[seen.length - 1];
     var idx = -1;
     for (var i = 0; i < STOPS.length; i++) if (STOPS[i].id === last) idx = i;
     if (idx < 1) return;
     var box = document.createElement("button");
     box.type = "button";
     box.className = "rv-resume";
-    box.innerHTML = '<i>继续上次</i><b>' + STOPS[idx].no + " " + STOPS[idx].name + '</b><em>已走 ' + seen.length + "/" + STOPS.length + '</em>';
+    box.innerHTML = '<i>继续上次</i><b>' + STOPS[idx].name + '</b>';
     box.addEventListener("click", function () {
       var el = document.getElementById(STOPS[idx].id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -65,7 +67,7 @@
       a.className = "rv-stop";
       a.dataset.idx = String(i);
       a.innerHTML = '<span class="rv-dot"></span>' +
-                    '<span class="rv-txt"><b>' + s.no + ' ' + s.name + '</b>' +
+                    '<span class="rv-txt"><b>' + s.name + '</b>' +
                     '<i>' + s.line + '</i></span>';
       a.addEventListener("click", function () {
         var el = document.getElementById(s.id);
@@ -106,17 +108,18 @@
       }
       if (active !== lastActive) {
         for (var k = 0; k < items.length; k++) items[k].classList.toggle("on", k === active);
-        cur.textContent = STOPS[active].no;
+        cur.textContent = "";
         curName.textContent = STOPS[active].name;
 
         // 旅程存档：记下走过的站点
         var sid = STOPS[active].id;
         var seen = loadSeen();
         if (seen.indexOf(sid) < 0) { seen.push(sid); saveSeen(seen); }
+        try { localStorage.setItem("chq.river.last", sid); } catch (e) { }
         for (var q = 0; q < items.length; q++) {
           items[q].classList.toggle("seen", seen.indexOf(STOPS[q].id) >= 0);
         }
-        if (hudBar) hudBar.textContent = "已走 " + seen.length + "/" + STOPS.length;
+        if (hudBar) hudBar.textContent = "";
         lastActive = active;
       }
     }

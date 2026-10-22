@@ -281,6 +281,18 @@
     } catch (e) { }
   }
 
+  /* ---------- 悬停互动（全站） ---------- */
+  function loadHoverFx() {
+    if (window.__hvfx) return;
+    window.__hvfx = 1;
+    var own = document.querySelector('script[src*="pagefx.js"]');
+    var base = own ? own.src.replace(/assets\/js\/pagefx\.js.*$/, "") : "";
+    var s = document.createElement("script");
+    s.src = base + "assets/js/hoverfx.js?v=20261023a";
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+
   /* ---------- 语音朗读（合成音） ---------- */
   function voicePass() {
     if (!("speechSynthesis" in window)) return;
@@ -415,6 +427,7 @@
     skipLink();
     pwa();
     footprint();
+    loadHoverFx();
     choreograph();
   }
 

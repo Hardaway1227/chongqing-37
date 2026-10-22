@@ -103,7 +103,7 @@
     ctx.fillStyle = "#7d8798";
     ctx.font = '400 20px "PingFang SC","Microsoft YaHei",sans-serif';
     var dt = new Date();
-    ctx.fillText("hardaway1227.github.io/chongqing-37　·　" +
+    ctx.fillText("CHONGQING · 38 DISTRICTS　·　" +
       dt.getFullYear() + "." + String(dt.getMonth() + 1).padStart(2, "0") + "." + String(dt.getDate()).padStart(2, "0"), 72, H - 54);
   }
 
